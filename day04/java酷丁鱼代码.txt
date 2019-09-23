@@ -1,4 +1,4 @@
-Kudingyu kdy = key Kudingyu //引入酷丁鱼
+Kudingyu kdy = new Kudingyu();  //引入酷丁鱼
 
 kdy.step(x)     //移动X步
 kdy.turnLeft();// 左转
