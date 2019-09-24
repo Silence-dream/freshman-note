@@ -5,7 +5,7 @@ var people01 = {
     height: '180',
     weight: '75KG',
     student_number: 01,
-    phone_number:1383838438
+    phone_number:1383838438,
 }
 var people02 = {
     name:"李四",
@@ -14,7 +14,7 @@ var people02 = {
     height:"179",
     weight:"40KG",
     student_number:02,
-    phone_number:1383838437
+    phone_number:1383838437,
 
 }
 
