@@ -18,8 +18,8 @@
 // console.log(typeof string);
 // console.log(boolean);
 // console.log(typeof boolean);
-// console.log(undefined);
-// console.log(typeof undefined);
+// console.log(un);
+// console.log(typeof un);
 // console.log(not);
 // console.log(typeof kong);
 // console.log(arr);
