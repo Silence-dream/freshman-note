@@ -4,7 +4,7 @@
 // var num=123;
 // var string="11";
 // var boolean=true;
-// var undefined;
+// var  un;
 // var not=null;
 // var arr=[1,2,3,4,5];
 // var obj={
