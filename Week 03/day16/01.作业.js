@@ -163,5 +163,5 @@
 
 // 4. console.log(1+’false’)和console.log(1+false)的值，并解释为什么
 
-    // console.log(1+"false")//+号起连接字符串的作用
+    // console.log(1+"false")//因为"false"是字符串所以+号起连接字符串的作用
     // console.log(1+false) // 隐式转换false会被转换成number,false对应的number值是0
