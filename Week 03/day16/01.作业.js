@@ -104,7 +104,7 @@
 // 5)其余情况，返回参数 num
 
 
-// var num="163";
+// var num=121;
 // if(num%3==0 && num%5==0)
 // {
 //     console.log("fizzbuzz")
@@ -117,7 +117,7 @@
 // {
 //     console.log("buzz")
 // }
-// else if(num/1!=num)
+// else if(isNaN(num))
 // {
 //     console.log("false")
 // }
