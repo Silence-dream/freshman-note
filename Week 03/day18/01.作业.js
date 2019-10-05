@@ -16,16 +16,33 @@
     请让我去练习时长两年半再回来思考怎么算
  */
 
+var a=1;
+for(var i=2;i<=100;i++)
+{
+    if(i%2==0)
+    {
+        a-=1/i;
+    }
+    else if(i%2!=0)
+    {
+        a+=1/i;
+    }
+}
+console.log(a);
+
+
+
+
 // 43.用for循环求2+22+222+2222+22222的和
 
-// var a = 0
-// var sum = 0
-// for (var i=1; i<=5; i++)
-// {
-//     a = a*10 + 2
-//     sum = sum + a
-// }
-// console.log(sum);
+var a = 0
+var sum = 0
+for (var i=1; i<=5; i++)
+{
+    a = a*10 + 2
+    sum = sum + a
+}
+console.log(sum);
 
 // 44.定义一个人的对象，有name,age,gender,height等属性，
 // 要求：1)获取name的值
