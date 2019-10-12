@@ -12,17 +12,10 @@ for(var i=0;i<oldArr_long;i++)
     {
         newArr[i]=oldArr[i];
     }
-    if(newArr[i]==undefined)
+    if(newArr[i]==undefined);
     {
         delete newArr[i]
     }
 }
 newArr = newArr.filter(function(e){return e}); //删除所有空值(“”，null，undefined和0)
 console.log(newArr);
-newArr.filter
-
-var a=100;
-if(a%10==0)
-{
-
-}
