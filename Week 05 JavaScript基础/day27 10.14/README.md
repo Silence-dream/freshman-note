@@ -1,4 +1,4 @@
-                         **选择题**
+# 选择题
 
 ###### 1.null,undefined,”string”,20,true,false的共同点是(B)
 
