@@ -9,9 +9,9 @@
 // }
 // console.log(object.getNameFunc()())
 
-function Person(name, age) {
-    this.name;
-    this.age
+var myCar = {
+    name: "骂了",
+    year: 1955,
+    color: "yellow",
 }
-var o = new Person("张三", 18)
-console.log(o)
+
