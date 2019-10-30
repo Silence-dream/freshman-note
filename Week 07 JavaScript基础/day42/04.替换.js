@@ -8,8 +8,8 @@ var str = 'qweqweoeqweroqweqweodfsfdo';
 
 //遍历字符串
 for (let key = 0; key < str.length; key++) {
-    if (str[key].charCodeAt("o") == 113) {
-        console.log(str.indexOf("o"), key);
+    if (str[key] == 'o') {
+        console.log(key)
     }
 }
 //把字符串中的o替换成-

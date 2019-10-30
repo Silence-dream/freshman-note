@@ -13,13 +13,21 @@ function getStrSum(str) {
     */
     let obj = {};
     for (let i = 0; i < str.length; i++) {
+        // //判断字符在对象obj里面是否存在
+        // if (obj[str.charAt(i)]) {
+        //     //存在就属性值+1
+        //     obj[str.charAt(i)]++;
+        // } else {
+        //     //不存在就让属性值等于1
+        //     obj[str.charAt(i)] = 1;
+        // }
         //判断字符在对象obj里面是否存在
-        if (obj[str.charAt(i)]) {
+        if (obj[str[i]]) {
             //存在就属性值+1
-            obj[str.charAt(i)]++;
+            obj[str[i]]++;
         } else {
             //不存在就让属性值等于1
-            obj[str.charAt(i)] = 1;
+            obj[str[i]] = 1;
         }
     }
     let sum = 0;
