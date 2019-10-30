@@ -21,11 +21,11 @@
         }
 
         //方法二
-        function mGetDate(year, month) {
+        function getDate(year, month) {
             var d = new Date(year, month, 0);
             return d.getDate();
         }
-        let a = mGetDate(userYear, 2)
+        let a = getDate(userYear, 2)
         if (a == 29) {
             alert(`${userYear}的2月份是${a}天所以是闰年`)
         } else if (a == 28) {
