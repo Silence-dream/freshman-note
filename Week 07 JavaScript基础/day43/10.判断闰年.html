@@ -13,6 +13,8 @@
         // 10. 获取当前时间，判断今年是否为闰年。两种方法判断
         //     1)判断今年是否为闰年；  能被400整除 或 被4整除但不能被100整除
         //     2)判断本年2月是否为28天。闰年：2月有29天  平年：2月有28天
+
+        //第一问
         let userYear = +prompt("请输入年");
         if (userYear % 4 == 0 && userYear % 100 != 0 || userYear % 400 == 0) {
             alert("是闰年")
@@ -20,7 +22,7 @@
             alert("不是闰年");
         }
 
-        //方法二
+        //第二问
         function getDate(year, month) {
             var d = new Date(year, month, 0);
             return d.getDate();
