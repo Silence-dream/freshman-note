@@ -20,7 +20,7 @@
             //定义密码
             let pwd = +prompt("请输入密码");
             //判断如果不等于admin
-            if (userName != "admin") {
+            if (userName != "admin" || pwd != 88888) {
                 flag == false;
                 alert("请重新输入");
             }
@@ -30,6 +30,7 @@
                 break
             }
         }
+
         if (flag == true) {
             alert("登录成功");
         }
