@@ -10,16 +10,19 @@
  C．<Link href="main.css” type="text/css">  
  D．<Include href="main.css” type="text/css"  rel="stylesheet"> 
 ## 3.用HTML标记语言编写一个简单的网页，网页最基本的结构是（ D  ）。   
-A <html> <head>,</head> <frame>,</frame> </html>   
-B <html> <title>,</title> <body>,</body> </html>   
-C <html> <title>,</title> <frame>,</frame> </html>   
-D <html> <head>,</head> <body>,</body> </html>
+`A <html> <head>,</head> <frame>,</frame> </html>`   
+`B <html> <title>,</title> <body>,</body> </html>  ` 
+`C <html> <title>,</title> <frame>,</frame> </html>   `
+`D <html> <head>,</head> <body>,</body> </html>`
+
 ## 4.以下标记符中，用于设置页面标题的是（ A ） 
-A.<title>   B.<caption>  C.<head>   D.<html>
+`A.<title>   B.<caption>  C.<head>   D.<html>`
+
 ## 5.以下标记符中，没有对应的结束标记的是（B  ） 
-A.<body>  B.<br>   C.<html>  D.<title>
+`A.<body>  B.<br>`   `C.<html>  D.<title>`
+
 ## 6.在网页中，必须使用（ A ）标记来完成超级链接。   
-A`<a>,</a>`  B<p>,</p>     C<link>,</link>   D<li>,</li> 
+A`<a>,</a>`  B`<p>,</p>`     C`<link>,</link>`   D`<li>,</li> `
 
 ## 7. 下列关于HTML的说法正确的是（    C  ） 
 A．HTML是网页的核心，是一种超文本标记的程序设计语言 
@@ -32,7 +35,8 @@ B． HTML文档的结束的位置
 C． 在head元素中 
 D． 在body元素中  
 ## 9.内部样式表的元素是（  A    ）。 
-A． <style> B． <css> C． <script> 
+`A． <style> B． <css> C． <script> `
+
 ## 10.元素中定义样式表的属性名是（   A   ）。 
 A． style B． class C． styles D． font  
 ## 11.下列 （  A    ）是定义样式表中的注释语句。 
@@ -43,12 +47,14 @@ D．‘ 注释语句
 ## 12.CSS是利用什么XHTML标记构建网页布局？（ B     ）  
 A. <dir>  B. <div>  C. <dis>  D. <dif>   
 ## 13.html中的注释标签是（  C  ）    
-A、 <--      -->    B、<--!      -->    
-C、<!--      -->    D、<--      --!> 
+`A、 <--      -->    B、<--!      -->  `  
+`C、<!--      -->    D、<--      --!> `
+
 ## 14.在HTML中，下面是段落标签的是： (D) 
-A. <HTML>,</HTML>  B. <HEAD>,</HEAD>   
-C. <BODY>,</BODY>   D. <P>,</P> 
-## 15."HTML语言中,插入图象的HTML代码是<img src="">,其中src的含义是"   (D) 
+`A. <HTML>,</HTML>  B. <HEAD>,</HEAD>   `
+`C. <BODY>,</BODY>   D. <P>,</P> `
+
+## 15."HTML语言中,插入图象的HTML代码是·`<img src="">`,其中src的含义是"   (D) 
 A. 链接的地址 B. 图象的路径 
 C. 所插入图象的属性  D. 以上都正确 
 二、简答题
