@@ -5,6 +5,7 @@
 
 body {
     background-color: #f3f5f7;
+    height: 2300px;
 }
 
 a {
@@ -210,3 +211,115 @@ li {
 
 /* 信息右结束 */
 /* 紫色区域结束 */
+
+
+
+/* 精品推荐行栏开始 */
+.boutique {
+    height: 60px;
+    margin-top: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    line-height: 60px;
+}
+
+.boutique h3 {
+    float: left;
+    font-size: 16px;
+    color: #00a4ff;
+    margin-left: 30px;
+}
+
+.boutique ul {
+    float: left;
+    margin-left: 30px;
+}
+
+.boutique ul li {
+    float: left;
+}
+
+.boutique .nterest {
+    float: right;
+    font-size: 16px;
+    color: #050505;
+    padding: 0 30px;
+}
+
+.boutique ul a {
+    font-size: 16px;
+    color: #050505;
+    padding: 0 30px;
+    border-left: 1px solid #bfbfbf;
+}
+
+/* 修改兴趣 */
+.boutique .interest {
+    float: right;
+    font-size: 14px;
+    color: #00a4ff;
+    margin-right: 30px;
+}
+
+/* 精品推荐行栏结束 */
+
+/* 精品推荐开始 */
+.box {
+    margin-top: 30px;
+}
+
+.box .box-head {
+    height: 45px;
+    /* border: 1px solid red; */
+}
+
+.box .box-head h3 {
+    float: left;
+    font-size: 20px;
+    color: #494949;
+    line-height: 45px;
+}
+
+.box .box-head a {
+    float: right;
+    font-size: 12px;
+    color: #a5a5a5;
+    margin-right: 30px;
+    line-height: 45px;
+}
+
+.box .box-body ul {
+    width: 1225px;
+}
+
+.box .box-body ul li {
+    float: left;
+    width: 228px;
+    height: 270px;
+    background-color: white;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.box .box-body ul li img {
+    width: 100%;
+}
+
+.box .box-body ul li h4 {
+    margin: 20px 20px 20px 25px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+
+.box .box-body ul li p {
+    margin: 0 20px 0 25px;
+    font-size: 12px;
+    color: #999;
+}
+
+.box .box-body ul li span {
+    color: #ff7c2d;
+}
+
+/* 精品推荐结束 */
