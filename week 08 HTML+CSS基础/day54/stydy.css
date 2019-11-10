@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f3f5f7;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+/* 居中页面整体内容使用  */
+.mid {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.head {
+    height: 42px;
+    /* background-color: aquamarine; */
+    margin: 30px auto;
+}
+
+/* logo开始 */
+.head .logo {
+    float: left;
+    width: 198px;
+    height: 42px;
+    /* background-color: pink; */
+}
+
+/* logo结束 */
+
+/* 首页课程开始 */
+.nav {
+    float: left;
+    margin-left: 60px;
+}
+
+.nav ul li {
+    float: left;
+    margin: 0 15px;
+}
+
+.nav ul a {
+    display: block;
+    height: 42px;
+    padding: 0 10px;
+    line-height: 42px;
+    font-size: 18px;
+    color: #050505;
+}
+
+.nav ul a:hover {
+    border-bottom: 2px solid #00a4ff;
+    color: #00a4ff;
+}
+
+/* 首页课程结束 */
+
+/* 输入框开始 */
+.search {
+    float: left;
+    width: 412px;
+    height: 42px;
+    background-color: skyblue;
+    margin-left: 50px;
+}
+
+.search input {
+    float: left;
+    width: 345px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+    border-right: 0;
+    padding-left: 15px;
+    color: #bfbfbf;
+    font-size: 14px;
+}
+
+.search button {
+    float: left;
+    width: 50px;
+    height: 42px;
+    background-color: tomato;
+    border: 0;
+    background: url(./images/btn.png);
+}
+
+/* 输入框结束 */
+
+/* 用户信息开始 */
+.user {
+    float: left;
+}
+
+.user li {
+    margin-left: 10px;
+    float: left;
+    line-height: 42px;
+}
+
+/* 用户信息结束 */
+
+/* 紫色区域开始 */
+.zi {
+    height: 421px;
+    background-color: #1c036c;
+}
+
+/* 中心信息区域开始 */
+.zi .mid {
+    height: 421px;
+    background: url(./images/php.png) no-repeat top center;
+}
+
+/* 中心信息区域结束 */
+/* 信息左开始 */
+.zi .left {
+    float: left;
+    width: 190px;
+    height: 421px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.zi .left ul li {
+    height: 45px;
+    line-height: 45px;
+    padding: 0 10px;
+}
+
+.zi .left ul li a {
+    font-size: 14px;
+    color: white;
+}
+
+.zi .left ul li a:hover {
+    color: #00a4ff;
+}
+
+.zi .left ul li a span {
+    float: right;
+}
+
+/* 信息左结束 */
+
+/* 信息右开始 */
+.zi .right {
+    float: right;
+    width: 230px;
+    height: 300px;
+    margin-top: 50px;
+    background-color: #fff;
+}
+
+.zi .right h3 {
+    color: #fff;
+    font-size: 18px;
+    height: 48px;
+    background-color: #9bceea;
+    text-align: center;
+    line-height: 48px;
+
+}
+
+.zi .right .content {
+    padding: 0 20px;
+}
+
+/* .zi .right .content li {
+    padding: 14px 0;
+    border-bottom: 1px solid #ccc;
+} */
+.zi .right ul li {
+    padding: 12px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.zi .right .content h4 {
+    font-size: 14px;
+    color: #4e4e4e;
+}
+
+.zi .right .content p {
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.zi .right .content .curriculum {
+    display: block;
+    height: 38px;
+    border: 1px solid #00a4ff;
+    margin-top: 5px;
+    text-align: center;
+    line-height: 38px;
+    color: #00a4ff;
+    font-size: 16px;
+    font-weight: 700px;
+
+}
+
+/* 信息右结束 */
+/* 紫色区域结束 */
