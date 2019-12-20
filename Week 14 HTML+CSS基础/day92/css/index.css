@@ -114,7 +114,7 @@ header {
 
 main {
   width: 100%;
-  height: 10000px;
+  padding-bottom: 50px;
 }
 
 .view {
@@ -208,6 +208,8 @@ main {
   font-size: 16px;
   color: #c91523;
   padding-left: 20px;
+  font-weight: normal;
+  margin-right: 10px;
 }
 
 .seckill .seckill-title h3::before {
@@ -453,5 +455,44 @@ main {
 }
 
 .theme li:nth-of-type(2) img {
+  width: 100%;
+}
+
+.brand {
+  background-color: #fff;
+}
+
+.brand h3 {
+  height: 30px;
+  font-size: 16px;
+  color: #f25353;
+  line-height: 30px;
+  font-weight: normal;
+  padding-left: 10px;
+}
+
+.brand ul::before, .brand ul::after {
+  content: "";
+  display: table;
+}
+
+.brand ul::after {
+  clear: both;
+}
+
+.brand li {
+  float: left;
+  width: 30%;
+}
+
+.brand li:nth-child(1) {
+  width: 40%;
+}
+
+.brand a {
+  display: block;
+}
+
+.brand img {
   width: 100%;
 }
