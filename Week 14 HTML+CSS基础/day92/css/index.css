@@ -144,6 +144,10 @@ main {
 .navs {
   width: 100%;
   text-align: center;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  background: #fff;
 }
 
 .navs ul {
@@ -164,10 +168,15 @@ main {
   width: 25%;
 }
 
+.navs li:nth-last-child(-n+4) {
+  margin-top: 10px;
+}
+
 .navs a {
   display: block;
   width: 100%;
   height: 100%;
+  font-size: 12px;
 }
 
 .navs img {
@@ -175,8 +184,8 @@ main {
   height: 40px;
 }
 
-.navs a {
-  font-size: 12px;
+.navs p {
+  margin: 5px 0;
 }
 
 /* 秒杀 */
@@ -284,4 +293,165 @@ main {
   font-weight: normal;
   font-size: 12px;
   color: #666;
+}
+
+/* 4.活动 */
+.active {
+  background-image: url(../uploads/banner_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  overflow: hidden;
+}
+
+.active ul {
+  margin: 60px 10px 10px 10px;
+}
+
+.active ul::before, .active ul::after {
+  content: "";
+  display: table;
+}
+
+.active ul::after {
+  clear: both;
+}
+
+.active li {
+  float: left;
+  width: 50%;
+}
+
+.active li a {
+  display: block;
+}
+
+.active li img {
+  width: 100%;
+}
+
+/* 5.产品 */
+.product li::before, .product li::after {
+  content: "";
+  display: table;
+}
+
+.product li::after {
+  clear: both;
+}
+
+.product li:nth-child(1) a {
+  float: left;
+  display: block;
+  width: 33.333333%;
+}
+
+.product li:nth-child(2) a {
+  float: left;
+  display: block;
+  width: 50%;
+}
+
+.product img {
+  width: 100%;
+}
+
+/* 广告 */
+.adv {
+  margin: 10px;
+}
+
+.adv a {
+  display: block;
+}
+
+.adv a img {
+  width: 100%;
+}
+
+.market {
+  background-color: #fff;
+}
+
+.market .market-title {
+  height: 30px;
+  font-size: 16px;
+  color: #f25353;
+  line-height: 30px;
+  font-weight: normal;
+  padding-left: 10px;
+}
+
+.market ul::before, .market ul::after {
+  content: "";
+  display: table;
+}
+
+.market ul::after {
+  clear: both;
+}
+
+.market li {
+  float: left;
+  width: 50%;
+}
+
+.market li:nth-child(1) {
+  width: 49.99999%;
+}
+
+.market a {
+  display: block;
+}
+
+.market img {
+  width: 100%;
+}
+
+.theme h3 {
+  height: 30px;
+  font-size: 16px;
+  color: #f25353;
+  line-height: 30px;
+  font-weight: normal;
+  padding-left: 10px;
+}
+
+.theme li:nth-of-type(1)::before, .theme li:nth-of-type(1)::after {
+  content: "";
+  display: table;
+}
+
+.theme li:nth-of-type(1)::after {
+  clear: both;
+}
+
+.theme li:nth-of-type(1) a {
+  float: left;
+  width: 50%;
+}
+
+.theme li:nth-of-type(1) a:nth-last-child(-n+2) {
+  width: 25%;
+}
+
+.theme li:nth-of-type(1) img {
+  width: 100%;
+}
+
+.theme li:nth-of-type(2)::before, .theme li:nth-of-type(2)::after {
+  content: "";
+  display: table;
+}
+
+.theme li:nth-of-type(2)::after {
+  clear: both;
+}
+
+.theme li:nth-of-type(2) a {
+  float: left;
+  width: 25%;
+}
+
+.theme li:nth-of-type(2) img {
+  width: 100%;
 }
