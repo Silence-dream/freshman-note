@@ -1,2 +1,1 @@
-# com.fliggy.www
-HTML+CSS项目(仿飞猪移动端)
+[点我查看飞猪](https://github.com/Silence-dream/com.fliggy.www)
