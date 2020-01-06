@@ -34,7 +34,7 @@ console.log(3 + 4 + "5");
 - C: 12
 - D: "12"
 
-4.下面代码的输出是什么(C)
+4.下面代码的输出是什么(D)
 
 ```js
 const set = new Set([1, 1, 2, 3, 4]);
@@ -83,7 +83,7 @@ console.log(greetign);
 function Person(firstName, lastName) {
     this.firstName = firstName
     this.lastName = lastName
-}
+}																																								
 const lydia = new Person('Lydia', 'Hallie');
 const sarah = Person('Sarah', 'Smith');
 
@@ -295,9 +295,17 @@ for (let i = 0; i < c.length; i++) {
 }
 console.log(p);
 
+let obj={}
+
+
+
 for (let i = 0; i < p.length; i++) {
+    console.log(p[i][0]);
     console.log(p[i][1]);
+    obj[p[i][0]]=p[i][1];
 }
+console.log(obj);
+
 ~~~
 
 
@@ -341,6 +349,27 @@ var countedNames = arr.reduce(function (allNames, name) {
 
 
 console.log(countedNames);
+
+
+
+
+
+
+
+var arr = [1, 2, 3, 4, 5, 1, 1, 2, 3, 2];
+
+let obj={};
+for(let i = 0;i<arr.length;i++)
+{
+    if(obj[arr[i]]){
+        obj[arr[i]]++;
+    }
+    else{
+        obj[arr[i]]=1;
+    }
+}
+console.log(obj);
+
 
 
 ~~~
