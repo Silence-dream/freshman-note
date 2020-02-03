@@ -1,0 +1,296 @@
+* {
+    box-sizing: border-box;
+}
+
+/* 基于375写 */
+$basefont: 37.5;
+
+body {
+    background-color: #fafafc;
+    background-color: red;
+}
+
+
+/*  顶部搜索 */
+.top-search {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding-left: 12rem/$basefont;
+
+    .search-index {
+        position: relative;
+        flex: 1;
+        height: 28px;
+        line-height: 24px;
+        padding: 2px 5px;
+        padding-left: 35px;
+        font-size: 16px;
+        border-radius: 15px;
+        background-color: #fff;
+        color: #666;
+
+        span {
+            font-size: 16px;
+            color: #666666;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 28px;
+                height: 28px;
+                background: url(../img/person.png) 11px 5px no-repeat;
+                background-size: 21px auto;
+            }
+        }
+    }
+
+
+
+    .top-login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 51px;
+        height: 44px;
+
+        span {
+            font-size: 12rem/$basefont;
+            color: #ffffff;
+        }
+
+        &:before {
+            display: block;
+            content: "";
+            width: 22px;
+            height: 22px;
+            background: url(../img/person.png) 1px -36px no-repeat;
+            background-size: 21px auto;
+        }
+    }
+}
+
+
+.banner {
+    height: 180rem/$basefont;
+    overflow: hidden;
+    // background: url(../img/banner.jpg) no-repeat;
+    // background-size: 100%;
+
+    li {
+        height: 180rem/$basefont;
+        background: url(../img/banner.jpg) no-repeat;
+        background-size: 100%;
+    }
+}
+
+/* 旅游导航 */
+.travel-nav {
+    padding: 0 12px;
+    margin-top: -20rem/$basefont;
+}
+
+
+/* 攻略 */
+
+.strategy {
+    ul {
+        display: flex;
+        width: 351rem/$basefont;
+        background-color: #ffffff;
+        border-radius: 9rem/$basefont;
+        padding: 4rem/$basefont 8rem/$basefont;
+        // justify-content: space-between;
+        // align-items: center;
+    }
+
+    li {
+        flex: 1;
+    }
+
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    span {
+        display: block;
+        width: 40px;
+        height: 40px;
+        background-image: url(../img/sprite.png);
+        background-position: 0 0;
+        background-size: 40px auto;
+    }
+
+    p {
+        font-size: 12px;
+        color: #222222;
+    }
+}
+
+/* 酒店 */
+.hotel {
+    display: flex;
+    flex-direction: column;
+    background-color: pink;
+    border-radius: 9rem/$basefont;
+    overflow: hidden;
+
+    a {
+        border-left: 1px solid #fff;
+    }
+
+    .hotel-row1 {
+        display: flex;
+        background: linear-gradient(to right, #fa5956, #fb8650 54%);
+
+        a {
+            display: flex;
+            // justify-content: center;
+            align-items: center;
+
+            &:nth-child(1) {
+                width: 31%;
+                padding: 25.6rem/$basefont 0 25.6rem/$basefont 12rem/$basefont;
+                background: url(../img/h1.png) no-repeat;
+                background-position: right bottom;
+                background-size: 73px auto;
+            }
+
+            &:nth-child(2) {
+                width: 23%;
+                padding: 25.6rem/$basefont 0;
+                justify-content: center;
+                background: url(../img/h11.png) no-repeat;
+                background-position: left bottom;
+                background-size: 73px auto;
+
+            }
+
+            &:nth-child(3) {
+                width: 46%;
+                // padding: 25.6rem/$basefont 0;
+                justify-content: center;
+                background-image: linear-gradient(to right, #ffbc49, #ffd252);
+
+                div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    // text-align: center;
+                    // padding: 25.6rem/$basefont;
+                    background: url(../img/airplane.png) no-repeat;
+                    background-position: right bottom;
+                    background-size: 86.5px auto;
+                }
+
+                span {
+                    position: relative;
+
+
+                    i {
+                        position: absolute;
+                        top: -14rem/$basefont;
+                        right: 0;
+                        color: #fff;
+                        font-size: 12rem/$basefont;
+                        background: #f54c45;
+                        border-radius: 7rem/$basefont 7rem/$basefont 7rem/$basefont 0;
+                        padding: 2rem/$basefont 5rem/$basefont;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    .hotel-row2,
+    .hotel-row3 {
+        display: flex;
+
+        a {
+            display: flex;
+
+            &:nth-child(1) {
+                width: 31%;
+                padding: 25.6rem/$basefont 0 25.6rem/$basefont 12rem/$basefont;
+                background-position: right bottom;
+                background-repeat: no-repeat;
+                background-size: 73px auto;
+            }
+
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4) {
+                width: 23%;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &:nth-child(2),
+            &:nth-child(3),
+                {
+                background-position: left bottom;
+                background-size: 73px auto;
+                background-repeat: no-repeat;
+            }
+
+            // &:nth-child(3) {
+            //     width: 23%;
+            //     justify-content: center;
+            //     align-items: center;
+
+            // }
+
+            // &:nth-child(4) {
+            //     width: 23%;
+            //     justify-content: center;
+            //     align-items: center;
+
+            // }
+        }
+    }
+
+    /* 设置第二行图片 */
+    .hotel-row2 {
+        background: linear-gradient(to right, #4b8fed, #53bced);
+
+        a {
+            &:nth-child(1) {
+                background-image: url(../img/h2.png);
+            }
+
+            &:nth-child(2) {
+                background-image: url(../img/traain2.png);
+            }
+        }
+    }
+
+    /* 设置第三行图片 */
+    .hotel-row3 {
+        background: linear-gradient(to right, #34c2aa, #6cd557);
+
+        a {
+            &:nth-child(1) {
+                background-image: url(../img/h3.png);
+            }
+
+            &:nth-child(2) {
+                background-image: url(../img/h4.png);
+            }
+        }
+    }
+
+    span {
+        font-size: 14rem/$basefont;
+        color: #fff;
+    }
+}

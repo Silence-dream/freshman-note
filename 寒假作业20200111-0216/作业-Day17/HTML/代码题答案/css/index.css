@@ -1,0 +1,320 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* 基于375写 */
+body {
+  background-color: #fafafc;
+  background-color: red;
+}
+
+/*  顶部搜索 */
+.top-search {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 0.32rem;
+}
+
+.top-search .search-index {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 28px;
+  line-height: 24px;
+  padding: 2px 5px;
+  padding-left: 35px;
+  font-size: 16px;
+  border-radius: 15px;
+  background-color: #fff;
+  color: #666;
+}
+
+.top-search .search-index span {
+  font-size: 16px;
+  color: #666666;
+}
+
+.top-search .search-index span:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  background: url(../img/person.png) 11px 5px no-repeat;
+  background-size: 21px auto;
+}
+
+.top-search .top-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 51px;
+  height: 44px;
+}
+
+.top-search .top-login span {
+  font-size: 0.32rem;
+  color: #ffffff;
+}
+
+.top-search .top-login:before {
+  display: block;
+  content: "";
+  width: 22px;
+  height: 22px;
+  background: url(../img/person.png) 1px -36px no-repeat;
+  background-size: 21px auto;
+}
+
+.banner {
+  height: 4.8rem;
+  overflow: hidden;
+}
+
+.banner li {
+  height: 4.8rem;
+  background: url(../img/banner.jpg) no-repeat;
+  background-size: 100%;
+}
+
+/* 旅游导航 */
+.travel-nav {
+  padding: 0 12px;
+  margin-top: -0.53333rem;
+}
+
+/* 攻略 */
+.strategy ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 9.36rem;
+  background-color: #ffffff;
+  border-radius: 0.24rem;
+  padding: 0.10667rem 0.21333rem;
+}
+
+.strategy li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.strategy a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.strategy span {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-image: url(../img/sprite.png);
+  background-position: 0 0;
+  background-size: 40px auto;
+}
+
+.strategy p {
+  font-size: 12px;
+  color: #222222;
+}
+
+/* 酒店 */
+.hotel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: pink;
+  border-radius: 0.24rem;
+  overflow: hidden;
+  /* 设置第二行图片 */
+  /* 设置第三行图片 */
+}
+
+.hotel a {
+  border-left: 1px solid #fff;
+}
+
+.hotel .hotel-row1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: -webkit-gradient(linear, left top, right top, from(#fa5956), color-stop(54%, #fb8650));
+  background: linear-gradient(to right, #fa5956, #fb8650 54%);
+}
+
+.hotel .hotel-row1 a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hotel .hotel-row1 a:nth-child(1) {
+  width: 31%;
+  padding: 0.68267rem 0 0.68267rem 0.32rem;
+  background: url(../img/h1.png) no-repeat;
+  background-position: right bottom;
+  background-size: 73px auto;
+}
+
+.hotel .hotel-row1 a:nth-child(2) {
+  width: 23%;
+  padding: 0.68267rem 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: url(../img/h11.png) no-repeat;
+  background-position: left bottom;
+  background-size: 73px auto;
+}
+
+.hotel .hotel-row1 a:nth-child(3) {
+  width: 46%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffbc49), to(#ffd252));
+  background-image: linear-gradient(to right, #ffbc49, #ffd252);
+}
+
+.hotel .hotel-row1 a:nth-child(3) div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  background: url(../img/airplane.png) no-repeat;
+  background-position: right bottom;
+  background-size: 86.5px auto;
+}
+
+.hotel .hotel-row1 a:nth-child(3) span {
+  position: relative;
+}
+
+.hotel .hotel-row1 a:nth-child(3) span i {
+  position: absolute;
+  top: -0.37333rem;
+  right: 0;
+  color: #fff;
+  font-size: 0.32rem;
+  background: #f54c45;
+  border-radius: 0.18667rem 0.18667rem 0.18667rem 0;
+  padding: 0.05333rem 0.13333rem;
+}
+
+.hotel .hotel-row2,
+.hotel .hotel-row3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hotel .hotel-row2 a,
+.hotel .hotel-row3 a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hotel .hotel-row2 a:nth-child(1),
+.hotel .hotel-row3 a:nth-child(1) {
+  width: 31%;
+  padding: 0.68267rem 0 0.68267rem 0.32rem;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: 73px auto;
+}
+
+.hotel .hotel-row2 a:nth-child(2), .hotel .hotel-row2 a:nth-child(3), .hotel .hotel-row2 a:nth-child(4),
+.hotel .hotel-row3 a:nth-child(2),
+.hotel .hotel-row3 a:nth-child(3),
+.hotel .hotel-row3 a:nth-child(4) {
+  width: 23%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hotel .hotel-row2 a:nth-child(2), .hotel .hotel-row2 a:nth-child(3),
+.hotel .hotel-row3 a:nth-child(2),
+.hotel .hotel-row3 a:nth-child(3) {
+  background-position: left bottom;
+  background-size: 73px auto;
+  background-repeat: no-repeat;
+}
+
+.hotel .hotel-row2 {
+  background: -webkit-gradient(linear, left top, right top, from(#4b8fed), to(#53bced));
+  background: linear-gradient(to right, #4b8fed, #53bced);
+}
+
+.hotel .hotel-row2 a:nth-child(1) {
+  background-image: url(../img/h2.png);
+}
+
+.hotel .hotel-row2 a:nth-child(2) {
+  background-image: url(../img/traain2.png);
+}
+
+.hotel .hotel-row3 {
+  background: -webkit-gradient(linear, left top, right top, from(#34c2aa), to(#6cd557));
+  background: linear-gradient(to right, #34c2aa, #6cd557);
+}
+
+.hotel .hotel-row3 a:nth-child(1) {
+  background-image: url(../img/h3.png);
+}
+
+.hotel .hotel-row3 a:nth-child(2) {
+  background-image: url(../img/h4.png);
+}
+
+.hotel span {
+  font-size: 0.37333rem;
+  color: #fff;
+}
