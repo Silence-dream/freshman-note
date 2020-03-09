@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 在页面中创建一个div， 给这个div添加点击事件， 在页面中显示， 我被点击了，
+        // 鼠标进入事件， 在页面中显示， 鼠标移入到了盒子上，
+        // 鼠标离开事件， 在页面中显示， 鼠标离开了盒子
+    </script>
+    <style>
+        .mod-tabs {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mod-tabs">
+
+    </div>
+    <script>
+        let div = document.querySelector(".mod-tabs");
+        div.addEventListener("click", () => {
+            alert("我被点击了");
+        })
+        div.addEventListener("mouseover", () => {
+            alert("鼠标移入到了盒子上");
+        })
+        div.addEventListener("mouseout", () => {
+            alert("鼠标离开了盒子");
+        })
+    </script>
+</body>
+
+</html>
