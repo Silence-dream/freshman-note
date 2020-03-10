@@ -35,13 +35,13 @@
 
    D、getElementsByTagName("p")[0]
 
-3. 下列关于DOM模型节点访问说法正确是（B）
+3. 下列关于DOM模型节点访问说法正确是（C）
 
    A、可以根据节点ID访问多个对象
 
    B、getElementsByTagName方法是根据节点的name属性访问节点
 
-   C、querySelector方法的作用是获取一个指定name属性值的对象集合
+   C、querySelector方法的作用是获取指定CSS选择器的一个元素
 
    D、getElementsById的我们作用是根据name值获取对象集合集合
 
