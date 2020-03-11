@@ -139,6 +139,13 @@ innerText // 获取内容的时候 不包括标签
         hide.addEventListener("click", function () {
             div.style.display = "none";
         })
+        // 方法二
+        show.addEventListener("click", function () {
+            div.style.visibility = "visible";
+        })
+        hide.addEventListener("click", function () {
+            div.style.visibility = "hidden";
+        })
     </script>
 </body>
 
