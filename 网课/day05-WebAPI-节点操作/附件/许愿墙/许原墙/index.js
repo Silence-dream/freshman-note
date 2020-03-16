@@ -95,7 +95,7 @@
         tip1.id = "tip7";
         // 随机位置
         tip1.style.top = parseInt(Math.random() * 446) + "px";
-        tip1.style.left = parseInt(Math.random() * 773) + "px";
+        tip1.style.left = parseInt(Math.random() * 733) + "px";
 
         // 在class是tip1的div里面创建一个class是tip_h的div
         let div1 = document.createElement("div");
