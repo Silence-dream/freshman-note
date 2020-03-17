@@ -30,6 +30,7 @@ window.addEventListener("load", function () {
             `;
 
             comment.insertBefore(span, comment.children[0]);
+            transition.value = "";
             // comment.appendChild(span);
 
 
