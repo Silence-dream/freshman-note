@@ -6,15 +6,22 @@ window.addEventListener("load", function () {
     const j_tb = document.querySelector('#j_tb');
     // 每当鼠标移入的时候都要获取所有的get
     // - 注意：当根据数据表格中的添加一行之后，再次点击"GET"这一行还能删除当前行
-    table.addEventListener("mouseenter", function () {
-        let get = j_tb.querySelectorAll(".get");
-        for (let i = 0; i < get.length; i++) {
-            get[i].addEventListener("click", function () {
-                j_tb.removeChild(this.parentNode.parentNode);
-                // console.log(this.parentNode.parentNode);
-            })
+    table.addEventListener("click", function (e) {
+        if (e.target.nodeName == "A") {
+            j_tb.removeChild(e.target.parentNode.parentNode);
         }
+        console.log(e.target.nodeName);
     })
+    // 原来的代码
+    // table.addEventListener("mouseenter", function () {
+    //     let get = j_tb.querySelectorAll(".get");
+    //     for (let i = 0; i < get.length; i++) {
+    //         get[i].addEventListener("click", function () {
+    //             j_tb.removeChild(this.parentNode.parentNode);
+    //             // console.log(this.parentNode.parentNode);
+    //         })
+    //     }
+    // })
 
 
     // - 当点击"添加数据"遮罩层和添加数据的文本框都会显示
