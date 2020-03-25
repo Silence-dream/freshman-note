@@ -1,6 +1,6 @@
 # 选择题
 
-1. 下面选项中( )能够获取滚动条距离页面顶端的距离的
+1. 下面选项中( C)能够获取滚动条距离页面顶端的距离的
 
    A、scrollHeight
 
@@ -10,7 +10,7 @@
 
    D、top 
 
-2. 下面可以获取浏览器在卷动后，隐藏的文档部分的高度的属性是( )
+2. 下面可以获取浏览器在卷动后，隐藏的文档部分的高度的属性是(B )
    
     A window.body.scrollTop
    
@@ -20,7 +20,7 @@
    
     D documentElement.body.scrollTop
 
-3. 下列关于clientHeight说法正确的是( )
+3. 下列关于clientHeight说法正确的是( C)
 
    A、clientHeight获取元素在可视区域的高度，包括边框
 
@@ -30,7 +30,7 @@
 
    D、clientHeight获取元素在可视区域的高度，包括滚动条的高度，以及包括padding
 
-4. 下列关于offsetHeight、clientHeight、scrollHeight的计算说法正确的是( )
+4. 下列关于offsetHeight、clientHeight、scrollHeight的计算说法正确的是(C )
    
    A、offsetHeight：height + padding + border+margin
 
@@ -41,7 +41,7 @@
    D、scrollHeight：元素中内容的实际高度(有边框)，如果内容不足,就是元素的高度
 
 
-5. 下列关于scrollHeight和scrollWidth说法错误的是()
+5. 下列关于scrollHeight和scrollWidth说法错误的是(C)
 
    A、scrollHeight 和 scrollWidth 属性为只读属性 ​
 
@@ -56,11 +56,25 @@
 
 第1题. client系列包含哪些属性，分别有什么作用？ 
 ```js
-
+element.clientTop
+	返回元素上边框的大小
+element.clientLeft
+	返回元素左边框的大小
+element.clientWidth
+	返回自身包括padding、内容区的宽度， 不含边框，返回数值不带单位
+element.clientHeight
+	返回自身包括padding、内容区的高度， 不含边框，返回数值不带单位
 ```
 第2题. scroll系列包含哪些属性，分别有什么作用？
 ```js
-
+element.scrollTop
+	返回被卷去的上侧距离，返回数值不带单位
+element.scrollLeft
+	返回被卷去的左侧距离，返回数值不带单位
+element.scrollWidth
+	返回自身内容实际的宽度，不含边框，返回数值不带单位
+element.scrollHeight
+	返回自身内容实际的高度，不含边框，返回数值不带单位
 ```
 
 # 编程题
