@@ -126,7 +126,6 @@
     </tr>
   </table>
   <script>
-
     // 需求2.全选、反选、取消全选效果实现(素材在案例中):
     // - 点击全选按钮，列表中的选项都被选中
     // - 点击取消全选按钮，列表中的选项都被取消选中
@@ -171,35 +170,32 @@
         allcheck.checked = flag;
       }
     }
-    // 点击全选按钮，列表中的选项都被选中
-    // allBtn.onclick = function () {
-    //   // 列表中的选项都选中
-    //   for (let i = 0; i < lists.length; i++) {
-    //     lists[i].checked = true;
-    //   }
-    //   // 全选复选框选中
-    //   allcheck.checked = true;
-    // }
-    // // 点击取消全选按钮，列表中的选项都被取消选中
-    // // 给取消全选按钮添加点击事件
-    // cancelBtn.onclick = function () {
-    //   // 遍历每项 让每项都不选中
-    //   for (let i = 0; i < lists.length; i++) {
-    //     lists[i].checked = false;
-    //   }
-    //   // 全选复选框不选中
-    //   allcheck.checked = false;
-    // }
+    // 点击全选按钮， 列表中的选项都被选中
+    allBtn.onclick = function () {
+      // 列表中的选项都选中
+      for (let i = 0; i < lists.length; i++) {
+        lists[i].checked = true;
+      }
+      // 全选复选框选中
+      allcheck.checked = true;
+    }
+    // 点击取消全选按钮，列表中的选项都被取消选中
+    // 给取消全选按钮添加点击事件
+    cancelBtn.onclick = function () {
+      // 遍历每项 让每项都不选中
+      for (let i = 0; i < lists.length; i++) {
+        lists[i].checked = false;
+      }
+      // 全选复选框不选中
+      allcheck.checked = false;
+    }
 
-    // // 点击反选按钮，列表中选项选结果呈相反选中结果（原来选择的都取消选择，原来未选择的都变为选择）
-    // reverseBtn.onclick = function () {
-    //   for (let i = 0; i < lists.length; i++) {
-    //     lists[i].checked = !lists[i].checked;
-    //   }
-    // }
-
-
-    console.log(event)
+    // 点击反选按钮，列表中选项选结果呈相反选中结果（原来选择的都取消选择，原来未选择的都变为选择）
+    reverseBtn.onclick = function () {
+      for (let i = 0; i < lists.length; i++) {
+        lists[i].checked = !lists[i].checked;
+      }
+    }
   </script>
 </body>
 

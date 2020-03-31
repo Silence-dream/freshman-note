@@ -146,7 +146,6 @@
           //添加到tbody里面
           tbody.appendChild(tbodyTr)
           var obj = datas[i] // 这个对应的是数组里面的每一条对象
-
           // 循环遍历对象
           for (var key in obj) {
             //接下来我们需要创建td
@@ -154,43 +153,36 @@
             td.innerText = obj[key]
             tbodyTr.appendChild(td)
           }
-
           //创建最后一个td
           var lastTd = document.createElement('td')
           lastTd.innerHTML = `<a herf= "#">删除</a>`
           tbodyTr.appendChild(lastTd)
-
         }
-        //创建完表格之后，我重置flag
         flag = true
       }
-
-     // 删除tbody的每一行
-     var dels = document.querySelectorAll('tbody>tr>td:last-child')
-    //  console.log(dels)
-    // 当tobody中的行都被删除之后，这个表格也会被从页面中移除，再次点击“动态创建表格”继续可以创建表格
-    for(let i = 0;i<dels.length;i++){
-       dels[i].onclick = function(){
-           // confirm确认框
-           var isOk = confirm("你真的要删除嘛?")
-           // 返回值是布尔值
-           if(isOk){
+      // 删除tbody的每一行
+      var dels = document.querySelectorAll('tbody>tr>td:last-child')
+      //  console.log(dels)
+      // 当tobody中的行都被删除之后，这个表格也会被从页面中移除，再次点击“动态创建表格”继续可以创建表格
+      for (let i = 0; i < dels.length; i++) {
+        dels[i].onclick = function () {
+          // confirm确认框
+          var isOk = confirm("你真的要删除嘛?")
+          // 返回值是布尔值
+          if (isOk) {
             // 删除对应这行tr
             tbody.removeChild(this.parentNode)
             // 在这里面判断tbody.children
-            if(tbody.children.length==0){
-               // 将这个表格移除
-               box1.innerHTML = ""
-               // 再次能够创建表格
-               flag = false
+            if (tbody.children.length == 0) {
+              // 将这个表格移除
+              box1.innerHTML = ""
+              // 再次能够创建表格
+              flag = false
             }
-           }
-       }
+          }
+        }
+      }
     }
-     
-
-    }
- 
   </script>
 </body>
 

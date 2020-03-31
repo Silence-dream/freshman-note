@@ -23,12 +23,12 @@ td {
 
 th {
   background-color: #09c;
-  font: bold 16px "Î¢ÈíÑÅºÚ";
+  font: bold 16px "Î¢ï¿½ï¿½ï¿½Åºï¿½";
   color: #fff;
 }
 
 td {
-  font: 14px "Î¢ÈíÑÅºÚ";
+  font: 14px "Î¢ï¿½ï¿½ï¿½Åºï¿½";
 }
 
 td a.get {
@@ -64,7 +64,7 @@ tbody tr:hover {
   line-height: 36px;
 }
 
-.form-item > .lb {
+.form-item>.lb {
   position: absolute;
   left: 0;
   top: 0;
@@ -73,7 +73,7 @@ tbody tr:hover {
   text-align: right;
 }
 
-.form-item > .txt {
+.form-item>.txt {
   width: 300px;
   height: 32px;
 }
@@ -111,7 +111,7 @@ tbody tr:hover {
   width: auto;
   height: 18px;
   font-size: 16px;
-  font-family: ËÎÌå;
+  font-family: ï¿½ï¿½ï¿½ï¿½;
   font-weight: bold;
   color: rgb(102, 102, 102);
   text-indent: 12px;

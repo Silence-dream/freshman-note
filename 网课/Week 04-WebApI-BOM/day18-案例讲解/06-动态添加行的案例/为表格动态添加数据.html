@@ -119,12 +119,10 @@
       // 2.获取文本框的值 获取所属学院文本框的值
       let lessonValue = lesson.value;
       let schoolValue = school.value;
-      // console.log(lessonValue, schoolValue)
       // 3.判断一下如果不为空 
       if (lessonValue.trim().length !== 0 && schoolValue.trim().length !== 0) {
         // 3.1.获取tbody中的内容
         let tbodyStr = tbody.innerHTML;
-        // console.log(tbodyStr);
         // 3.2 构建tr的结构 并且填充数据
         tbodyStr += `
         <tr>
@@ -132,9 +130,7 @@
           <td>${schoolValue}</td>
           <td><a href="javascrip:;" class="get">GET</a></td>
         </tr>
-
         `;
-
         // 3.3 把所有tr的结构写道tbody中
         tbody.innerHTML = tbodyStr;
         // 3.4 让遮罩层和这个盒子都会隐藏
@@ -151,10 +147,7 @@
         lesson.value = '';
         school.value = "";
       }
-
     }
-
-
   </script>
 
 </body>

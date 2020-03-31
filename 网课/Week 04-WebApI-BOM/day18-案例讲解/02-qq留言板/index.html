@@ -103,14 +103,14 @@
         // 在这里我们要判断divObj1的位置，放到哪里,
         // 如果说留言区域的内容是空的话，我就使用appendChild()添加到里面，如果不为空，我是不是要插入到留言区域的第一个元素的前面insertBefore()
         // 把创建的元素添加到页面中
-  
 
-        if(messageArea.children.length == 0){
-           // 证明里面没有子元素
-           messageArea.appendChild(divObj1)
-        }else{
-            // 插入到第一个的前面
-            messageArea.insertBefore(divObj1,messageArea.children[0])  
+
+        if (messageArea.children.length == 0) {
+          // 证明里面没有子元素
+          messageArea.appendChild(divObj1)
+        } else {
+          // 插入到第一个的前面
+          messageArea.insertBefore(divObj1, messageArea.children[0])
         }
 
         // 创建img

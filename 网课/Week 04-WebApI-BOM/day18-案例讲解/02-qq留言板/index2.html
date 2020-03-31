@@ -87,12 +87,10 @@
       oBtn.onclick = function () {
         // 2.1.1 获取留言内容
         let content = oContent.innerHTML;
-        // console.log(content);
         // 2.1 判断一下内容是否为空 如果不为空
         if (content.trim().length != 0) {
           // 2.1.2 组装模板
           let str = msgFrame.innerHTML;
-          // console.log(str);
           str += `
           <div class="content_1">
         <img class="name" src="http://qlogo3.store.qq.com/qzone/1262283870/1262283870/100?1481718124" alt="photo">
@@ -114,9 +112,6 @@
           // 2.2 如果为空  您还没有输入任何内容
           alert("您还没有输入任何内容")
         }
-
-
-
       }
     </script>
 </body>
