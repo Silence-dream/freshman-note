@@ -7,6 +7,14 @@ function getNowTime() {
     this.minute = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
     this.second = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
     var currentTime = this.year + '-' + this.month + '-' + this.date + ' ' + this.hour + ':' + this.minute + ':' + this.second;
-    return currentTime;
+    return {
+        year: this.year,
+        month: this.month,
+        date: this.date,
+        hour: this.hour,
+        minute: this.minute,
+        second: this.second,
+        currentTime: currentTime
+    };
 }
 console.log(getNowTime());
