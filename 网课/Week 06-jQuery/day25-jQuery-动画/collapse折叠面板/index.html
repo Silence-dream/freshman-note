@@ -19,9 +19,13 @@
         }
 
         .item {
-            /* height: 25px; */
             overflow: hidden;
             cursor: pointer;
+        }
+
+        .item span {
+            /* display: none; */
+            overflow: hidden;
         }
 
         .item div {
@@ -120,6 +124,11 @@
         </div>
 
     </div>
+    <script>
+        // $(".item>div").on("click", function () {
+        //     $(this).siblings("span").slideToggle("linear")
+        // });
+    </script>
 </body>
 
 </html>
