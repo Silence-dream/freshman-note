@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>学员信息</title>
+	<link rel="stylesheet" href="./css/list.css">
+</head>
+
+<body>
+	<table>
+		<caption>学员信息</caption>
+		<tr>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>性别</th>
+			<th>邮箱地址</th>
+			<th>爱好</th>
+			<th>所属学院</th>
+			<th>入学时间</th>
+		</tr>
+
+	</table>
+	<script src="./lib/template-web.js"></script>
+	<script src="./lib/jQuery.js"></script>
+
+	<!-- 模板 -->
+	<script type="type/template" id="tr">
+		<tr>
+			<th>{{name}}</th>
+			<th>{{age}}</th>
+			<th>{{gender}}</th>
+			<th>{{email}}</th>
+			<th>{{hobby}}</th>
+			<th>{{academy}}</th>
+			<th>{{date}}</th>
+		</tr>
+	</script>
+	<script>
+		$(function () {
+
+			// 得到传回来的数据
+			let obj = {};
+			$.ajax({
+				type: "get",
+				url: "/students",
+				data: null,
+				// dataType: "dataType",
+				success: function (response) {
+					obj = response;
+					console.log(obj);
+					let htmlStr = template('tr', {
+						name: obj.name,
+						age: obj.age,
+						gender: obj.gender,
+						email: obj.email,
+						hobby: obj.hobby,
+						academy: obj.academy,
+						date: obj.date,
+					});
+
+					$("table").append(htmlStr)
+
+				}
+			});
+
+
+
+		});
+	</script>
+
+
+
+</body>
+
+</html>
