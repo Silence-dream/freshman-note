@@ -20,21 +20,21 @@
 			</label>
 			<label>
 				性别:
-				<input type="radio" value="0"> 男
-				<input type="radio" value="1"> 女
+				<input type="radio" value="男" name="gender"> 男
+				<input type="radio" value="女" name="gender"> 女
 			</label>
 			<label>
 				邮箱地址: <input class="normal" type="text" placeholder="请输入邮箱地址" name="useremail">
 			</label>
 			<label>
 				爱好:
-				<input type="checkbox" value="敲代码"> 敲代码
-				<input type="checkbox" value="打篮球"> 打篮球
-				<input type="checkbox" value="睡觉"> 睡觉
+				<input type="checkbox" value="敲代码" name="hobby"> 敲代码
+				<input type="checkbox" value="打篮球" name="hobby"> 打篮球
+				<input type="checkbox" value="睡觉" name="hobby"> 睡觉
 			</label>
 			<label>
 				所属学院:
-				<select class="normal">
+				<select class="normal" name="academy">
 					<option value="前端与移动开发">前端与移动开发</option>
 					<option value="PHP">PHP</option>
 					<option value="JAVA">JAVA</option>
@@ -45,7 +45,7 @@
 				</select>
 			</label>
 			<label>
-				入学日期: <input type="date" class="normal">
+				入学日期: <input type="date" class="normal" name="date">
 			</label>
 			<label class="btn">
 				<input type="submit" value="提交" class="normal">
@@ -58,48 +58,15 @@
 
 			$(".btn").on("click", function (e) {
 				e.preventDefault();
-				// 获取form表单里面的值
-				// userage: "123"
-				// useremail: "123"
-				// username: "123"
-				var d = {}
-				var t = $('form').serializeArray();
-				//t的值为[{name: "a1", value: "xx"},
-				//{name: "a2", value: "xx"}...]
-				$.each(t, function (index, ele) {
-					d[this.name] = this.value;
-				});
-				// /* 得到用户输入的数据 */
-				// 得到性别
-				let gender = $("input[type=radio]:checked").val();
-				if (gender == 0) {
-					gender = "男";
-				} else if (gender == 1) {
-					gender = "女";
-				} else {
-					gender = "";
-				}
-				// 得到爱好
-				let hobby = $("input[type=checkbox]:checked").val();
-				// 得到日期
-				let date = $("input[type=date]").val()
-				// /* 所属学院 */
-				let academy = $("select[class=normal] option:selected").val();
+				var formData = $('form').serializeArray();
+				console.log(formData);
 				$.ajax({
-					type: "get",
+					type: "post",
 					url: "/index",
-					data: {
-						name: d.username,
-						age: d.userage,
-						gender: gender,
-						email: d.useremail,
-						hobby: hobby,
-						academy: academy,
-						date: date
-					},
+					data: formData,
 					success: function (response) {
-						console.log(response);
-						// $(location).attr('href', 'http://localhost/list.html');
+						// console.log(response);
+						$(location).attr('href', 'http://localhost/list.html');
 					}
 				});
 			});

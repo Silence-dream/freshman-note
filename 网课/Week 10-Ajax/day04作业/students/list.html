@@ -26,21 +26,26 @@
 
 	<!-- 模板 -->
 	<script type="type/template" id="tr">
+
+		{{each data}}
 		<tr>
-			<th>{{name}}</th>
-			<th>{{age}}</th>
-			<th>{{gender}}</th>
-			<th>{{email}}</th>
-			<th>{{hobby}}</th>
-			<th>{{academy}}</th>
-			<th>{{date}}</th>
+			<th>{{$value.username}}</th>
+			<th>{{$value.userage}}</th>
+			<th>{{$value.gender}}</th>
+			<th>{{$value.useremail}}</th>
+			<th>{{$value.hobby.toString()}}</th>
+			<th>{{$value.academy}}</th>
+			<th>{{$value.date.replace(/-/g,"/")}}</th>
 		</tr>
+		{{/each}}
+
+	
 	</script>
 	<script>
 		$(function () {
 
 			// 得到传回来的数据
-			let obj = {};
+			let obj;
 			$.ajax({
 				type: "get",
 				url: "/students",
@@ -50,17 +55,9 @@
 					obj = response;
 					console.log(obj);
 					let htmlStr = template('tr', {
-						name: obj.name,
-						age: obj.age,
-						gender: obj.gender,
-						email: obj.email,
-						hobby: obj.hobby,
-						academy: obj.academy,
-						date: obj.date,
+						data: obj,
 					});
-
 					$("table").append(htmlStr)
-
 				}
 			});
 

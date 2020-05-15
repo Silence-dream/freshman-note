@@ -12,41 +12,54 @@ const app = express();
 const port = 80;
 const fs = require("fs");
 const path = require("path");
+const data = require("./data.json");
+const bodyParser = require("body-parser")
+
 app.use(express.static(path.join(__dirname, "students"), {
   index: "index.html"
-}))
+}));
+/* 设置中间件 */
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
 /* 保存传输过来的数据 */
 let objInfo = {};
-//保存为数组
-let arrInfo = [];
-let count = 0;
-app.get('/index', (req, res) => {
+
+
+
+// let count = 0;
+app.post('/index', (req, res) => {
   // console.log(req.query);
-  objInfo = req.query;
-  arrInfo.push([objInfo]);
+  objInfo = req.body;
+  // console.log(objInfo);
+  // 判断是否添加数据进去
+  let flag = true;
 
   // console.log(arrInfo.length);
 
+  //判断数据是否填写完整
   for (const key in objInfo) {
-    if (objInfo[key] == "") {
-      res.send("请把表单填写完整");
-      return;
-    } else {
 
-      fs.writeFile("./data.json", JSON.stringify(arrInfo), function (err) {
-        if (err != null) {
-          console.log("写入失败");
-          return;
-        }
-        count += 100;
-        console.log("count=", count);
-        console.log("写入成功");
-      })
-      res.send("发送成功");
-      return;
+    if (objInfo[key] == "") {
+      flag = false;
+      res.send("请完整填写表单");
+      // return;
+      break;
     }
   }
+
+  data.unshift(objInfo)
+  if (flag) {
+    fs.writeFile(path.join(__dirname, "data.json"), JSON.stringify(data), (err, data) => {
+      if (err != null) {
+        console.log("写入失败");
+        return;
+      }
+      res.send("发送成功")
+    })
+  }
+  console.log(flag);
 })
 
 app.get("/students", (req, res) => {
