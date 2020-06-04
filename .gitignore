@@ -107,8 +107,23 @@ dist
 # TernJS port file
 .tern-port
 
+# 屏蔽压缩文件
+*.rar  
+*.zip 
+*.7z 
+*.CAB 
+*.ARJ 
+*.LZH 
+*.TAR 
+*.GZ 
+*.ACE 
+*.UUE 
+*.BZ2 
+*.JAR 
+*.ISO
 
 # 屏蔽视频文件
+*.itcast
 *.wmv
 *.avi
 *.dat
