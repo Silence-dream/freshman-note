@@ -70,14 +70,20 @@ $(function () {
         url: "/admin/login",
         data: $form.serialize(),
         success: function (result) {
+          console.log(result);
           // 回显错误信息
           if (result.code == 500) {
+            // bootstrapvalidator插件代码
             $form
               .data("bootstrapValidator")
               .updateStatus("email", "INVALID", "callback");
             $form
               .data("bootstrapValidator")
               .updateStatus("password", "INVALID", "callback");
+          }
+          // 登陆成功跳转
+          if ((result.code = 200)) {
+            location.href = "/admin";
           }
         },
       });

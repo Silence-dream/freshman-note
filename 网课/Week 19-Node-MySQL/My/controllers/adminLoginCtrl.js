@@ -46,6 +46,35 @@ module.exports.loginUser = (req, res) => {
   // });
   findUser(email, function (result) {
     // console.log(email);
-    console.log(result);
+    // 判断邮箱书写是否存在于数据库中
+    if (result.length !== 0) {
+      // 存在
+      if (result[0].password == password) {
+        // 密码正确
+        // 输出session
+        console.log(req.session);
+        // 把用户信息保存在session中
+        req.session.user = result[0];
+        console.log(req.session);
+
+        res.send({
+          code: 200,
+          message: "登陆成功",
+        });
+      } else {
+        // 密码不正确
+        res.send({
+          code: 500,
+          message: "邮箱或密码错误",
+        });
+      }
+    } else {
+      // 不存在
+      res.send({
+        code: 500,
+        message: "邮箱或密码错误",
+      });
+    }
+    // console.log(result);
   });
 };
