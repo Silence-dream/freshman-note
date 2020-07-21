@@ -1,7 +1,7 @@
 {
   "name": "aliBaiXiu",
   "version": "1.0.0",
-  "description": "",
+  "description": "添加用户,显示用户完成,没做数据校验",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
