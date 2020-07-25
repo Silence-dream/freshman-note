@@ -12,7 +12,7 @@ const { findUser } = require("../models/adminLoginModel");
 
 module.exports.loginPage = (req, res) => {
   // res.send("login");
-  res.render("./admin/login.html");
+  res.render("./admin/login.html", { title: "后台登陆页面" });
 };
 module.exports.loginUser = (req, res) => {
   // 1.获取前端传来的数据
@@ -52,11 +52,10 @@ module.exports.loginUser = (req, res) => {
       if (result[0].password == password) {
         // 密码正确
         // 输出session
-        console.log(req.session);
+        // console.log(req.session);
         // 把用户信息保存在session中
         req.session.user = result[0];
-        console.log(req.session);
-
+        // console.log(req.session);
         res.send({
           code: 200,
           message: "登陆成功",
@@ -76,5 +75,17 @@ module.exports.loginUser = (req, res) => {
       });
     }
     // console.log(result);
+  });
+};
+
+// 退出
+module.exports.logoutUser = (req, res) => {
+  req.session.destroy(function (err) {
+    res.clearCookie("connect.sid");
+    res.send({
+      code: 200,
+      message: "退出成功",
+      err: err,
+    });
   });
 };

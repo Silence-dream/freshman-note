@@ -46,6 +46,7 @@ const adminIndex = require("./routes/adminIndexRouter");
 const adminPosts = require("./routes/adminPostsRouter");
 const adminCommentsRouter = require("./routes/adminCommentsRouter");
 const adminUsers = require("./routes/adminUsersRouter");
+const adminSettings = require("./routes/adminSettingsRouter");
 
 // 挂载路由
 app.use(index);
@@ -57,6 +58,7 @@ app.use("/admin", adminIndex);
 app.use("/admin", adminPosts);
 app.use("/admin", adminCommentsRouter);
 app.use("/admin", adminUsers);
+app.use("/admin", adminSettings);
 
 //设置ejs模板引擎
 // 把views设置为模板文件的根目录
