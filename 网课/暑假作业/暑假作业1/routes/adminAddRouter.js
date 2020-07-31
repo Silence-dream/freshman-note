@@ -1,7 +1,7 @@
 const express = require("express");
 const adminAddRouter = express.Router();
 // 连接数据库模组
-const { addHero } = require("../models/adminAddModels");
+const { addHero, deleteHero } = require("../models/adminAddModels");
 
 // 页面渲染
 adminAddRouter.get("/add", (req, res) => {
@@ -18,7 +18,7 @@ adminAddRouter.post("/add", (req, res) => {
     skill: req.body.skill,
   };
   addHero(heroObjData, function (result) {
-    console.log(result);
+    // console.log(result);
     if (result) {
       return res.send({
         code: 200,
@@ -33,4 +33,22 @@ adminAddRouter.post("/add", (req, res) => {
   });
 });
 
+// 删除数据
+adminAddRouter.post("/delete", (req, res) => {
+  let id = Number(req.body.id);
+
+  deleteHero(id, function (result) {
+    if (result) {
+      return res.send({
+        code: 200,
+        message: "删除成功",
+      });
+    } else {
+      return res.send({
+        code: 500,
+        message: "删除失败",
+      });
+    }
+  });
+});
 module.exports = adminAddRouter;

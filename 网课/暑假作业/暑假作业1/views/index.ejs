@@ -154,24 +154,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>盖伦</td>
-                    <td>德玛西亚之力</td>
-                    <td>躲草丛</td>
-                    <td>
-                      <button onclick="location.href='./edit.html'" class="btn btn-primary">编辑</button>
-                      <button onclick="alert('你真狠')" class="btn btn-danger">删除</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>盖伦</td>
-                    <td>德玛西亚之力</td>
-                    <td>躲草丛</td>
-                    <td>
-                      <button onclick="location.href='./edit.html'" class="btn btn-primary">编辑</button>
-                      <button onclick="alert('你真狠')" class="btn btn-danger">删除</button>
-                    </td>
-                  </tr>
+
 
                 </tbody>
               </table>
@@ -195,7 +178,7 @@
     <td>{{$value.skill}}</td>
     <td>
       <button onclick="location.href='/admin/edit'" class="btn btn-primary" data-index='{{$value.id}}'>编辑</button>
-      <button onclick="alert('你真狠')" class="btn btn-danger" data-index='{{$value.id}}'>删除</button>
+      <button  class="btn btn-danger" data-index='{{$value.id}}'>删除</button>
     </td>
   </tr>
   {{/each}}
