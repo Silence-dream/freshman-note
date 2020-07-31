@@ -2,7 +2,7 @@ $(function () {
   // 页面载入从数据库获取英雄数据
   $.ajax({
     type: "post",
-    url: "/index",
+    url: "/admin/index",
     data: null,
     success: function (response) {
       // console.log(response);

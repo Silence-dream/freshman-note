@@ -76,7 +76,7 @@ $(function () {
           console.log(response);
           //#region  登陆成功
           if (response.code == 200) {
-            location.href = "/index";
+            location.href = "/admin/index";
           }
           //#endregion
           //#region 登陆失败

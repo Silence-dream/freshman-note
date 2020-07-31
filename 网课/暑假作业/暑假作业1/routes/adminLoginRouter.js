@@ -6,7 +6,7 @@ const { userLogin } = require("../models/adminLoginModels");
 // 页面渲染
 adminLoginRouter.get("/login", (req, res) => {
   res.render("login");
-  console.log(req.session);
+  // console.log(req.session);
 });
 // 判断登陆成功
 adminLoginRouter.post("/login", (req, res) => {

@@ -19,6 +19,7 @@ app.engine("ejs", ejs.__express); //定义模板引擎
 // 路由配置引入
 const adminLoginRouter = require("./routes/adminLoginRouter");
 const adminIndexRouter = require("./routes/adminIndexRouter");
+const adminAddRouter = require("./routes/adminAddRouter");
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -45,7 +46,12 @@ app.use(function (req, res, next) {
 });
 
 // 挂载路由
-app.use(adminIndexRouter);
+app.use("/admin", adminIndexRouter);
 app.use("/admin", adminLoginRouter);
+app.use("/admin", adminAddRouter);
 
+// 404页面
+app.use(function (req, res, next) {
+  res.send("哎哟页面不存在,错误代码:404");
+});
 app.listen(port, () => console.log(`http://localhost:3000`));
