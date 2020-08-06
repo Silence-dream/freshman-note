@@ -35,16 +35,6 @@ adminIndexRouter.get("/index", (req, res) => {
   // }
 });
 
-// adminIndexRouter.post("/index", (req, res) => {
-//   let search = req._parsedOriginalUrl.query;
-//   // 得到参数
-//   let query = urlencode.decode(search.split("=")[1]);
-//   // 查找数据
-//   fuzzySearch(query, function (result) {
-//     return res.render("index", { queryHeroTemp: result });
-//   });
-// });
-
 // 获取英雄数据
 adminIndexRouter.post("/indexHero", (req, res) => {
   findhero(function (result) {
@@ -54,8 +44,5 @@ adminIndexRouter.post("/indexHero", (req, res) => {
     });
   });
 });
-// adminIndexRouter.get("/index+search=123", (req, res) => {
-//   res.send("搜搜");
-// });
 
 module.exports = adminIndexRouter;

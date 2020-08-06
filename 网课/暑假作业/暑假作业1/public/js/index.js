@@ -36,24 +36,4 @@ $(function () {
       });
     }
   });
-
-  // 查询操作
-  // $("#queryName").click(function (e) {
-  //   e.preventDefault();
-  //   console.log(1);
-  //   // 得到输入的内容
-  //   let text = $(".form-control").val();
-  //   // 设置并保持路由
-  //   let topUrl = (location.href = `?search=${text}`);
-  //   $.ajax({
-  //     type: "post",
-  //     url: `/admin/index${topUrl}`,
-  //     data: true,
-  //     success: function (response) {},
-  //   });
-  // });
-  // $(window).bind("hashchange", function () {
-  //   //
-  //   console.log(111111111);
-  // });
 });
