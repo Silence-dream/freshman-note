@@ -7,6 +7,8 @@ const port = 3000;
 const session = require("express-session");
 const mysql = require("mysql");
 const ejs = require("ejs");
+// 解码url里面的中文
+const urlencode = require("urlencode");
 
 // 接收post请求中间件
 app.use(express.urlencoded({ extended: false }));
@@ -20,6 +22,7 @@ app.engine("ejs", ejs.__express); //定义模板引擎
 const adminLoginRouter = require("./routes/adminLoginRouter");
 const adminIndexRouter = require("./routes/adminIndexRouter");
 const adminAddRouter = require("./routes/adminAddRouter");
+const adminQueryRouter = require("./routes/adminQueryRouter");
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -46,9 +49,14 @@ app.use(function (req, res, next) {
 });
 
 // 挂载路由
+// 首页路由
 app.use("/admin", adminIndexRouter);
+// 登陆路由
 app.use("/admin", adminLoginRouter);
+// 添加用户
 app.use("/admin", adminAddRouter);
+// 查询用户
+app.use("/admin", adminQueryRouter);
 
 // 404页面
 app.use(function (req, res, next) {

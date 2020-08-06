@@ -2,16 +2,16 @@
 
 const pool = require("../config/dbconfig");
 
-//#region 验证登陆
-
-module.exports.fuzzySearch = (username, callback) => {
-  pool.query(`select * from users where username='${username}' `, function (
-    error,
-    results,
-    fields
-  ) {
-    if (error) throw error;
-    callback(results);
-  });
-};
-//#endregion
+// //#region 根据英雄名字模糊查询
+// module.exports.fuzzySearch = (queryName, callback) => {
+//   pool.query(`SELECT * FROM hero WHERE hname LIKE '%${queryName}%'`, function (
+//     error,
+//     results,
+//     fields
+//   ) {
+//     if (error) throw error;
+//     callback(results);
+//     // console.log(results);
+//   });
+// };
+// //#endregion

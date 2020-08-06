@@ -2,7 +2,7 @@ $(function () {
   // 页面载入从数据库获取英雄数据
   $.ajax({
     type: "post",
-    url: "/admin/index",
+    url: "/admin/indexHero",
     data: null,
     success: function (response) {
       // console.log(response);
@@ -12,7 +12,7 @@ $(function () {
       $("tbody").html(heroStr);
     },
   });
-
+  //删除操作
   $("tbody").on("click", ".btn-danger", function (e) {
     e.preventDefault();
 
@@ -36,4 +36,24 @@ $(function () {
       });
     }
   });
+
+  // 查询操作
+  // $("#queryName").click(function (e) {
+  //   e.preventDefault();
+  //   console.log(1);
+  //   // 得到输入的内容
+  //   let text = $(".form-control").val();
+  //   // 设置并保持路由
+  //   let topUrl = (location.href = `?search=${text}`);
+  //   $.ajax({
+  //     type: "post",
+  //     url: `/admin/index${topUrl}`,
+  //     data: true,
+  //     success: function (response) {},
+  //   });
+  // });
+  // $(window).bind("hashchange", function () {
+  //   //
+  //   console.log(111111111);
+  // });
 });
