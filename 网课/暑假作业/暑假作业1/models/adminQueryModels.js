@@ -4,7 +4,7 @@ const pool = require("../config/dbconfig");
 
 //#region 验证登陆
 
-module.exports.userLogin = (username, callback) => {
+module.exports.fuzzySearch = (username, callback) => {
   pool.query(`select * from users where username='${username}' `, function (
     error,
     results,
