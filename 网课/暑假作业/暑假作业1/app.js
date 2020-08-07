@@ -23,6 +23,7 @@ const adminLoginRouter = require("./routes/adminLoginRouter");
 const adminIndexRouter = require("./routes/adminIndexRouter");
 const adminAddRouter = require("./routes/adminAddRouter");
 const adminQueryRouter = require("./routes/adminQueryRouter");
+const adminEditRouter = require("./routes/adminEditRouter");
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -57,6 +58,8 @@ app.use("/admin", adminLoginRouter);
 app.use("/admin", adminAddRouter);
 // 查询用户
 app.use("/admin", adminQueryRouter);
+// 编辑用户
+app.use("/admin", adminEditRouter);
 
 // 404页面
 app.use(function (req, res, next) {

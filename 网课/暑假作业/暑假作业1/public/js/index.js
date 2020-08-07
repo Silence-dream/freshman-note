@@ -36,4 +36,20 @@ $(function () {
       });
     }
   });
+
+  // 点击编辑按钮
+  $("#my-table").on("click", ".btn-primary", function () {
+    // 得到资料id
+    let id = $(this).attr("data-index") - 0;
+
+    // 编辑页面得到
+    $.ajax({
+      type: "post",
+      url: "/admin/userEdit",
+      data: {
+        id: id,
+      },
+      success: function (response) {},
+    });
+  });
 });
