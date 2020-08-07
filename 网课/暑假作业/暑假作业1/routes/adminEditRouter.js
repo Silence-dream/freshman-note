@@ -2,8 +2,8 @@ const express = require("express");
 const adminEditRouter = express.Router();
 const url = require("url");
 // 连接数据库模组
-const { findID, updateUser } = require("../models/adminQueryModels");
-
+const { findID, updateUser } = require("../models/adminEditModels");
+console.log("adminEditModels.js的输出");
 // 页面渲染
 adminEditRouter.get("/edit", (req, res) => {
   // 得到查询的id
@@ -42,5 +42,6 @@ adminEditRouter.post("/saveEdit", (req, res) => {
     });
   });
 });
+console.log("adminEditModels.js的输出结束,bug存疑");
 
 module.exports = adminEditRouter;
