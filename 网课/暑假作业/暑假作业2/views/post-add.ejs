@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <title>Add new post &laquo; Admin</title>
-  <link rel="stylesheet" href="../assets/vendors/bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" href="../assets/vendors/font-awesome/css/font-awesome.css">
-  <link rel="stylesheet" href="../assets/vendors/nprogress/nprogress.css">
-  <link rel="stylesheet" href="../assets/css/admin.css">
-  <script src="../assets/vendors/nprogress/nprogress.js"></script>
-</head>
+<!-- 导入公共头部 -->
+<%- include('common/head'); %>
+
 <body>
-  <script>NProgress.start()</script>
+  <script>
+    NProgress.start()
+  </script>
 
   <div class="main">
     <nav class="navbar">
@@ -36,7 +32,8 @@
           </div>
           <div class="form-group">
             <label for="content">标题</label>
-            <textarea id="content" class="form-control input-lg" name="content" cols="30" rows="10" placeholder="内容"></textarea>
+            <textarea id="content" class="form-control input-lg" name="content" cols="30" rows="10"
+              placeholder="内容"></textarea>
           </div>
         </div>
         <div class="col-md-3">
@@ -49,7 +46,7 @@
             <select id="category" class="form-control" name="category">
               <option value="1">未分类</option>
               <option value="2">潮生活</option>
-			  <option value="3">潮科技</option>
+              <option value="3">潮科技</option>
             </select>
           </div>
           <div class="form-group">
@@ -85,12 +82,12 @@
           <li><a href="posts.html">所有文章</a></li>
           <li class="active"><a href="post-add.html">写文章</a></li>
         </ul>
-      </li
-    </ul>
-  </div>
-
-  <script src="../assets/vendors/jquery/jquery.js"></script>
-  <script src="../assets/vendors/bootstrap/js/bootstrap.js"></script>
-  <script>NProgress.done()</script>
+      </li </ul> </div> <script src="../assets/vendors/jquery/jquery.js">
+      </script>
+      <script src="../assets/vendors/bootstrap/js/bootstrap.js"></script>
+      <script>
+        NProgress.done()
+      </script>
 </body>
+
 </html>
