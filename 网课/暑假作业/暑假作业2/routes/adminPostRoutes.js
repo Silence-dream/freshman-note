@@ -3,10 +3,29 @@ const moment = require("moment");
 const adminPostRoutes = express.Router();
 
 // 导入数据库方法
-const { allPosts, pagePosts } = require("../models/adminFindPostsModels");
+const {
+  allPosts,
+  pagePosts,
+  addPosts,
+} = require("../models/adminFindPostsModels");
 
+// 写文章渲染
 adminPostRoutes.get("/add", (req, res) => {
+  // console.log(moment().format());
   res.render("post-add");
+});
+// 写文章传入内容
+adminPostRoutes.post("/addPosts", (req, res) => {
+  // 保存用户id
+  req.body.uid = req.session.user.uid;
+  // console.log(req.body.status);
+  // 如果没填写时间那么为当前时间
+  if (req.body.created == "") {
+    req.body.created = moment().format("YYYY-MM-DD");
+  }
+  console.log(req.body);
+  //保存数据
+  addPosts(req.body);
 });
 adminPostRoutes.get("/edit", (req, res) => {
   res.render("post-edit");

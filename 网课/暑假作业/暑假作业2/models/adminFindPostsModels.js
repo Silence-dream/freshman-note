@@ -21,7 +21,7 @@ module.exports.allPosts = (pageUp, pageDown, callback) => {
     // console.log(result);
   });
 };
-
+//#region 分页查询
 /**
  *
  *
@@ -73,6 +73,23 @@ module.exports.pagePosts = (pageNow, pageSize, callback) => {
         pageNumBer: pageNumBer,
         pageNow: pageDown / pageSize,
       });
+    }
+  );
+};
+//#endregion
+
+// 添加文章
+module.exports.addPosts = (obj, callback) => {
+  console.log(obj);
+  pool.query(
+    `INSERT INTO posts ( ptitle, pname,publish_time,state,uid,cid )
+    VALUES
+    ('${obj.title}', '${obj.slug}','${obj.created}','${obj.status}',${obj.uid},${obj.category})`,
+    // ('${obj.title}', '${obj.slug}',${obj.created},'${obj.status}',${obj.uid},${obj.category})
+    function (error, result, fields) {
+      if (error) throw error;
+      if (callback) callback(result);
+      // console.log(result);
     }
   );
 };
