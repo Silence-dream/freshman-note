@@ -28,19 +28,19 @@
       <div class="page-action">
         <!-- show when multiple checked -->
         <a class="btn btn-danger btn-sm" href="javascript:;" style="display: none">批量删除</a>
-        <form class="form-inline">
-          <select name="" class="form-control input-sm">
-            <option value="">所有分类</option>
-            <option value="">未分类</option>
+        <form class="form-inline" id='form-inline'>
+          <select name="cid" class="form-control input-sm">
+            <option value="-1">所有分类</option>
+            <option value="0">未分类</option>
             <option value="2">潮生活</option>
-            <option value="3">潮科技</option>
+            <option value="1">潮科技</option>
           </select>
-          <select name="" class="form-control input-sm">
-            <option value="">所有状态</option>
-            <option value="">草稿</option>
-            <option value="">已发布</option>
+          <select name="state" class="form-control input-sm">
+            <option value="-1">所有状态</option>
+            <option value="草稿">草稿</option>
+            <option value="已发布">已发布</option>
           </select>
-          <button class="btn btn-default btn-sm">筛选</button>
+          <button class="btn btn-default btn-sm" id="filtrate">筛选</button>
         </form>
         <!-- 分页 -->
         <ul class="pagination pagination-sm pull-right" id="pagination">
@@ -117,6 +117,24 @@
           <!-- 文章渲染 -->
           <script type="text/template" id="postsTemplate">
             {{each data.postsData[0]}}
+            <tr>
+              <td class="text-center"><input type="checkbox"></td>
+              <td>{{$value.ptitle}}</td>
+              <td>{{$value.pname}}</td>
+              <td>潮科技</td>
+              <td class="text-center">{{$value.publish_time}}</td>
+              <td class="text-center">{{$value.state}}</td>
+              <td class="text-center">
+                <a href="post-edit.html" class="btn btn-default btn-xs" data-pid="{{$value.pid}}">编辑</a>
+                <a href="javascript:;" class="btn btn-danger btn-xs" data-pid="{{$value.pid}}">删除</a>
+              </td>
+            </tr>
+            {{/each}}
+          </script>
+
+          <!-- 模糊查询文章渲染 -->
+          <script type="text/template" id="findpostsTemplate">
+            {{each data}}
             <tr>
               <td class="text-center"><input type="checkbox"></td>
               <td>{{$value.ptitle}}</td>

@@ -8,6 +8,7 @@ const {
   pagePosts,
   addPosts,
   deletePosts,
+  findPosts,
 } = require("../models/adminFindPostsModels");
 
 // 写文章渲染
@@ -92,7 +93,38 @@ adminPostRoutes.delete("/deletePosts", (req, res) => {
   let id = Number(req.body.id);
   // console.log("要删除的id", id);
   deletePosts(id, function (result) {
-    console.log(result);
+    if (result.code == 200) {
+      return res.send({
+        code: 200,
+        msg: "删除成功",
+      });
+    }
+    if (result.code == 500) {
+      return res.send({
+        code: 500,
+        msg: "删除失败",
+      });
+    }
+  });
+});
+
+// 文字查询
+adminPostRoutes.post("/findPosts", (req, res) => {
+  // console.log(req.body);
+  // 得到需要查询的玩意
+  let data = req.body;
+  if (req.body.cid == "-1" || req.body.state == "-1") {
+    return res.send({
+      code: 500,
+      msg: "你选的什么玩意???",
+    });
+  }
+  findPosts(data, function (result) {
+    return res.send({
+      code: 200,
+      msg: "数据获取成功",
+      data: result,
+    });
   });
 });
 module.exports = adminPostRoutes;

@@ -72,7 +72,40 @@ $(function () {
       url: "/admin/deletePosts",
       data: { id: id },
       success: function (response) {
-        console.log(response);
+        // console.log(response);
+        if (response.code == 200) {
+          location.reload();
+        }
+        if (response.code == 500) {
+          // location.reload();
+          alert("删除失败 ");
+        }
+      },
+    });
+  });
+
+  // 模糊查询
+  $("#filtrate").on("click", function (e) {
+    e.preventDefault();
+    let formData = $("#form-inline").serialize();
+    console.log(formData);
+    $.ajax({
+      type: "post",
+      url: "/admin/findPosts",
+      data: formData,
+      success: function (response) {
+        // console.log("模糊查询", response);
+        // console.log(response);
+        if (response.code == 500) {
+          alert("你的选择不合法");
+          location.reload();
+        }
+        if (response.code == 200) {
+          console.log(response);
+          let postsStr = template("findpostsTemplate", response);
+          $("#tbody").html(postsStr);
+          console.log(postsStr);
+        }
       },
     });
   });

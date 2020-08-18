@@ -107,12 +107,32 @@ module.exports.deletePosts = (id, callback) => {
       fields
     ) {
       if (error) throw error;
-      if (callback) callback(result);
+      if (callback)
+        callback({
+          code: 200,
+          data: result,
+        });
       // console.log(result);
     });
   } else {
-    callback("数据库操作返回,查询错误,传入的不是数字id:", id);
+    callback({
+      msg: `数据库操作返回,查询错误,传入的不是数字id:${id}`,
+      code: 500,
+    });
   }
+};
+
+// 模糊查询数据
+module.exports.findPosts = (obj, callback) => {
+  // SELECT * FROM posts WHERE cid=2 AND state='已发布';
+  pool.query(
+    `SELECT * FROM posts WHERE cid=${obj.cid} AND state='${obj.state}'`,
+    function (error, result, fields) {
+      if (error) throw error;
+      if (callback) callback(result);
+      // console.log(result);
+    }
+  );
 };
 
 /**
