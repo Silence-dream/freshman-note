@@ -62,7 +62,7 @@ $(function () {
   });
 
   // 点击删除文章
-  $("#tbody").on("click", "a", function () {
+  $("#tbody").on("click", "a[href='javascript:;']", function () {
     // 得到要删除的id
     let id = $(this).attr("data-pid");
     // console.log("要删除的id", id);
@@ -110,6 +110,21 @@ $(function () {
     });
   });
 
+  // 点击编辑文章
+  $("#tbody").on("click", "a[href='/admin/edit']", function (e) {
+    // 得到要删除的id
+    let pid = $(this).attr("data-pid");
+    $.ajax({
+      type: "post",
+      url: "/admin/updataPosts",
+      data: {
+        pid: pid,
+      },
+      success: function (response) {
+        console.log(response);
+      },
+    });
+  });
   // 分页渲染函数
   /**
    *

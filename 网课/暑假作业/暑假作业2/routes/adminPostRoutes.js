@@ -9,6 +9,7 @@ const {
   addPosts,
   deletePosts,
   findPosts,
+  findPidPosts,
 } = require("../models/adminFindPostsModels");
 
 // 写文章渲染
@@ -29,9 +30,7 @@ adminPostRoutes.post("/addPosts", (req, res) => {
   //保存数据
   addPosts(req.body);
 });
-adminPostRoutes.get("/edit", (req, res) => {
-  res.render("post-edit");
-});
+
 // 所有文章
 adminPostRoutes.get("/posts", (req, res) => {
   allPosts(0, 3, function (result) {
@@ -127,4 +126,28 @@ adminPostRoutes.post("/findPosts", (req, res) => {
     });
   });
 });
+
+adminPostRoutes.post("/updataPosts", (req, res, next) => {
+  // console.log(req.body);
+  let pid = req.body.pid;
+  // 保存pid到session中
+  req.session.user.pid = pid;
+  // console.log(req.session.user.pid);
+  next();
+});
+adminPostRoutes.get("/edit", (req, res) => {
+  // console.log(req.session.user.pid);
+  // 得到pid
+  let pid = req.session.user.pid;
+  findPidPosts(pid, function (result) {
+    // console.log(result.data[0]);
+    // 修改时间格式让type="datetime-local"识别
+    result.data[0].publish_time = moment(result.data[0].publish_time).format(
+      "YYYY-MM-DDTHH:mm"
+    );
+    return res.render("post-edit", { data: result.data[0] });
+  });
+  // res.render("post-edit");
+});
+
 module.exports = adminPostRoutes;

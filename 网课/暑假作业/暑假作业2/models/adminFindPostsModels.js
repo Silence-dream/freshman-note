@@ -137,6 +137,36 @@ module.exports.findPosts = (obj, callback) => {
 
 /**
  *
+ *
+ * @param {number} pid 文章id
+ * @param {function} callback 回调函数
+ */
+module.exports.findPidPosts = (pid, callback) => {
+  if (isNumber(pid)) {
+    pool.query(`SELECT * FROM posts WHERE pid=${pid}`, function (
+      error,
+      result,
+      fields
+    ) {
+      if (error) throw error;
+      if (callback)
+        callback({
+          code: 200,
+          msg: "数据获取成功",
+          data: result,
+        });
+    });
+  } else {
+    if (callback)
+      callback({
+        code: 500,
+        msg: "请输入数字",
+      });
+  }
+};
+
+/**
+ *
  * @param {number} input 传入数字,不是数字的会返回 false
  */
 function isNumber(input) {
