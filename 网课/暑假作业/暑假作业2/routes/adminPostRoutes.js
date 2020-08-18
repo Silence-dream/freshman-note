@@ -150,4 +150,21 @@ adminPostRoutes.get("/edit", (req, res) => {
   // res.render("post-edit");
 });
 
+adminPostRoutes.get("/loggedOut", (req, res) => {
+  console.log(req.query);
+  let isOut = req.query.isOut;
+  if (isOut) {
+    res.clearCookie("connect.sid");
+    return res.send({
+      code: 200,
+      msg: "退出成功",
+    });
+  } else {
+    return res.send({
+      code: 500,
+      msg: "退出失败",
+    });
+  }
+});
+
 module.exports = adminPostRoutes;
