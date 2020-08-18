@@ -51,10 +51,10 @@ module.exports.pagePosts = (pageNow, pageSize, callback) => {
   // console.log("你好", Math.ceil(pageDown / pageSize));
   if (pageUp <= 0) pageUp = 0;
   //#endregion
-  // console.log(pageUp);
-  // console.log(pageDown);
+  // console.log("pageUp", pageUp);
+  // console.log("pageDown", pageDown);
   pool.query(
-    `SELECT * FROM posts LIMIT ${pageUp},${pageDown};
+    `SELECT * FROM posts LIMIT ${pageUp},${pageSize};
      SELECT * FROM posts
   `,
     function (error, result, fields) {
@@ -68,6 +68,7 @@ module.exports.pagePosts = (pageNow, pageSize, callback) => {
       pageNumBer.length = Math.ceil(result[1].length / pageSize);
       // 得到一共多少条数据
       // console.log(result[1].length);
+      // console.log(result);
       callback({
         postsData: result,
         pageNumBer: pageNumBer,
@@ -80,7 +81,7 @@ module.exports.pagePosts = (pageNow, pageSize, callback) => {
 
 // 添加文章
 module.exports.addPosts = (obj, callback) => {
-  console.log(obj);
+  // console.log(obj);
   pool.query(
     `INSERT INTO posts ( ptitle, pname,publish_time,state,uid,cid )
     VALUES
@@ -93,3 +94,38 @@ module.exports.addPosts = (obj, callback) => {
     }
   );
 };
+
+//删除文章
+module.exports.deletePosts = (id, callback) => {
+  // console.log("这是数据库的操作", id, typeof id);
+
+  if (isNumber(id)) {
+    // DELETE FROM posts WHERE pid = 10;
+    pool.query(` DELETE FROM posts WHERE pid = ${id}`, function (
+      error,
+      result,
+      fields
+    ) {
+      if (error) throw error;
+      if (callback) callback(result);
+      // console.log(result);
+    });
+  } else {
+    callback("数据库操作返回,查询错误,传入的不是数字id:", id);
+  }
+};
+
+/**
+ *
+ * @param {number} input 传入数字,不是数字的会返回 false
+ */
+function isNumber(input) {
+  var re = /^[0-9]+.?[0-9]*/; //判断字符串是否为数字//判断正整数/[1−9]+[0−9]∗]∗/
+  if (!re.test(input)) {
+    // 不是数字
+    return false;
+  } else {
+    // 是数字
+    return true;
+  }
+}

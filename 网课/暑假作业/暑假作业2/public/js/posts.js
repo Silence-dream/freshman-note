@@ -61,6 +61,23 @@ $(function () {
     pageButton(pageNumber);
   });
 
+  // 点击删除文章
+  $("#tbody").on("click", "a", function () {
+    // 得到要删除的id
+    let id = $(this).attr("data-pid");
+    // console.log("要删除的id", id);
+    // 传输给后台
+    $.ajax({
+      type: "delete",
+      url: "/admin/deletePosts",
+      data: { id: id },
+      success: function (response) {
+        console.log(response);
+      },
+    });
+  });
+
+  // 分页渲染函数
   /**
    *
    * @param {number} pageNow 点击的页码

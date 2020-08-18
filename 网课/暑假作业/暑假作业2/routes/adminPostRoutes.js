@@ -7,6 +7,7 @@ const {
   allPosts,
   pagePosts,
   addPosts,
+  deletePosts,
 } = require("../models/adminFindPostsModels");
 
 // 写文章渲染
@@ -23,7 +24,7 @@ adminPostRoutes.post("/addPosts", (req, res) => {
   if (req.body.created == "") {
     req.body.created = moment().format("YYYY-MM-DD");
   }
-  console.log(req.body);
+  // console.log(req.body);
   //保存数据
   addPosts(req.body);
 });
@@ -46,7 +47,7 @@ adminPostRoutes.get("/posts", (req, res) => {
     // console.log(result.length);
   });
 });
-
+// 分页渲染
 adminPostRoutes.post("/getPosts", (req, res) => {
   // 得到页码
   // console.log(req.body);
@@ -83,5 +84,15 @@ adminPostRoutes.post("/getPosts", (req, res) => {
       });
     });
   }
+});
+// 文章删除
+adminPostRoutes.delete("/deletePosts", (req, res) => {
+  // console.log(req.body);
+  // 得到要删除的id
+  let id = Number(req.body.id);
+  // console.log("要删除的id", id);
+  deletePosts(id, function (result) {
+    console.log(result);
+  });
 });
 module.exports = adminPostRoutes;
