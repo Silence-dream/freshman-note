@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('./common/head'); %>
+
+<body>
+    <form class="form-inline definewidth m20" action="index.html" method="get">
+        用户名称：
+        <input type="text" name="username" id="username" class="abc input-default" placeholder="" value="">&nbsp;&nbsp;
+        机构名称：
+        <input type="text" name="" id="" class="abc input-default" placeholder="" value="">&nbsp;&nbsp;
+        <button type="submit" class="btn btn-primary">查询</button>&nbsp;&nbsp; <button type="button"
+            class="btn btn-success" id="addnew">新增用户</button>
+    </form>
+    <table class="table table-bordered table-hover definewidth m10">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>用户名称</th>
+                <th>机构名称</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>2</td>
+            <td>admin</td>
+            <td></td>
+            <td>
+                <a href="edit.html">编辑</a> &nbsp; &nbsp
+                <a href="#">删除</a>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
+<script>
+    $(function () {
+
+
+        $('#addnew').click(function () {
+
+            window.location.href = "add.html";
+        });
+
+
+    });
+
+    function del(id) {
+
+
+        if (confirm("确定要删除吗？")) {
+
+            var url = "index.html";
+
+            window.location.href = url;
+
+        }
+
+
+
+
+    }
+</script>

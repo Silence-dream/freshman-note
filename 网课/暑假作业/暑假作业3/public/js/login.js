@@ -1,12 +1,6 @@
 $(function () {
-  // //#region  登陆按钮点击
-  // $("#buttonLogin").click(function (e) {
-  //   e.preventDefault();
-  // });
-  // //#endregion
-
   //#region 表单验证
-  $("#userData")
+  $("#form-signin")
     .bootstrapValidator({
       // 什么时候校验
       live: "enabled",
@@ -18,7 +12,7 @@ $(function () {
         validating: "glyphicon glyphicon-refresh",
       },
       // 提交按钮
-      submitButtons: "#buttonLogin",
+      submitButtons: "#Btnlogin",
       fields: {
         username: {
           // message: "用户名或密码错误，请重新登录...",
@@ -29,8 +23,8 @@ $(function () {
             stringLength: {
               //输入　长度限制　　校验
               min: 5,
-              max: 15,
-              message: "用户名在5到15之间 ",
+              max: 18,
+              message: "用户名在5到18之间 ",
             },
             regexp: {
               //正则校验
@@ -50,8 +44,8 @@ $(function () {
             stringLength: {
               //输入　长度限制　　校验
               min: 5,
-              max: 15,
-              message: "密码在5到15之间 ",
+              max: 18,
+              message: "密码在5到18之间 ",
             },
             callback: {
               message: "用户名或密码错误，请重新登录...",
@@ -65,7 +59,7 @@ $(function () {
       // 为了阻止默认提交
       e.preventDefault();
       // form表单内容
-      // const dataForm = $("#userData").serialize();
+      const dataForm = $("#form-signin").serialize();
       var $form = $(e.target);
       // console.log($form);
       // 发起ajax请求
