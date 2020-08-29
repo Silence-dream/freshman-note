@@ -8,29 +8,29 @@
         <table class="table table-bordered table-hover definewidth m10">
             <tr>
                 <td width="10%" class="tableleft">用户名</td>
-                <td><input type="text" name="username" /></td>
+                <td><input type="text" name="username" minlength="5" maxlength="18" /></td>
             </tr>
             <tr>
                 <td class="tableleft">密码</td>
-                <td><input type="password" name="password" /></td>
+                <td><input type="password" name="password" minlength="5" maxlength="18" /></td>
             </tr>
 
             <tr>
                 <td class="tableleft">所属机构</td>
                 <td>
-                    <select name="gname">
-                        <option value="未分配">未分配</option>
-                        <option value="顺顺教育机构">顺顺教育机构</option>
-                        <option value="新东方">新东方</option>
-                        <option value="蓝翔">蓝翔</option>
+                    <select name="gid">
+                        <option value="0">未分配</option>
+                        <option value="1">顺顺教育机构</option>
+                        <option value="2">新东方</option>
+                        <option value="3">蓝翔</option>
                         <select>
                 </td>
             </tr>
             <tr>
                 <td class="tableleft">状态</td>
                 <td>
-                    <input type="radio" name="status" value="1" checked /> 启用
-                    <input type="radio" name="status" value="0" /> 禁用
+                    <input type="radio" name="state" value="1" checked /> 启用
+                    <input type="radio" name="state" value="0" /> 禁用
                 </td>
             </tr>
 
@@ -43,6 +43,7 @@
             </tr>
         </table>
     </form>
+    <script src="/js/UserAdd.js"></script>
 </body>
 
 </html>
