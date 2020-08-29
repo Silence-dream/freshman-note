@@ -13,6 +13,7 @@ let adminNodeAddRoutes = require("./routes/adminNodeAddRoutes");
 let adminNodeEditRoutes = require("./routes/adminNodeEditRoutes");
 let adminUserIndexRoutes = require("./routes/adminUserIndexRoutes");
 let adminUserAddRoutes = require("./routes/adminUserAddRoutes");
+let adminUserEditRoutes = require("./routes/adminUserEditRoutes");
 // 设置中间件接收post请求
 app.use(express.urlencoded({ extended: false }));
 // ejs配置
@@ -51,7 +52,7 @@ app.use("/admin", adminNodeAddRoutes);
 app.use("/admin", adminNodeEditRoutes);
 app.use("/admin", adminUserIndexRoutes);
 app.use("/admin", adminUserAddRoutes);
-// app.use("/admin", adminUserIndexRoutes);
+app.use("/admin", adminUserEditRoutes);
 
 // 404页面
 app.use((req, res, next) => {
