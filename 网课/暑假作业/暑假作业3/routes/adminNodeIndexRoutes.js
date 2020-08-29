@@ -1,14 +1,14 @@
 const express = require("express");
-const adminIndexRoutes = express.Router();
+const adminNodeIndexRoutes = express.Router();
 const { findIns, findNode } = require("../models/adminNodeIndexModels");
-adminIndexRoutes.get("/index", (req, res) => {
+adminNodeIndexRoutes.get("/NodeIndex", (req, res) => {
   findIns(function (results) {
     console.log();
     return res.render("./Node/index", { data: results });
   });
 });
 // 模糊查询
-adminIndexRoutes.post("/NodeFindData", (req, res) => {
+adminNodeIndexRoutes.post("/NodeFindData", (req, res) => {
   // console.log(req.body);
   let obj = req.body;
   console.log(obj);
@@ -35,4 +35,4 @@ adminIndexRoutes.post("/NodeFindData", (req, res) => {
     }
   });
 });
-module.exports = adminIndexRoutes;
+module.exports = adminNodeIndexRoutes;

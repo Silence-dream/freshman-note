@@ -21,44 +21,21 @@
                 <th>操作</th>
             </tr>
         </thead>
-        <tr>
-            <td>2</td>
-            <td>admin</td>
-            <td></td>
-            <td>
-                <a href="edit.html">编辑</a> &nbsp; &nbsp
-                <a href="#">删除</a>
-            </td>
-        </tr>
+        <tbody>
+            <% data.forEach(function(item){%>
+            <tr>
+                <td><%- item.id %></td>
+                <td><%- item.username %></td>
+                <td><%- item.gname %></td>
+                <td>
+                    <a href="javascript:;" data-id="<%- item.id %>">编辑</a> &nbsp; &nbsp
+                    <a href="javascript:;" data-id="<%- item.id %>">删除</a>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
     </table>
 </body>
+<script src="/js/UserIndex.js"></script>
 
 </html>
-<script>
-    $(function () {
-
-
-        $('#addnew').click(function () {
-
-            window.location.href = "add.html";
-        });
-
-
-    });
-
-    function del(id) {
-
-
-        if (confirm("确定要删除吗？")) {
-
-            var url = "index.html";
-
-            window.location.href = url;
-
-        }
-
-
-
-
-    }
-</script>

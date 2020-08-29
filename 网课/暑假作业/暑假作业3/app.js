@@ -7,10 +7,11 @@ const port = 80;
 app.use(express.static(path.join(__dirname, "public")));
 // 路由导入
 let adminLoginRoutes = require("./routes/adminLoginRoutes");
-let adminIndexRoutes = require("./routes/adminNodeIndexRoutes");
+let adminIndexRoutes = require("./routes/adminIndexRoutes");
 let adminNodeIndexRoutes = require("./routes/adminNodeIndexRoutes");
 let adminNodeAddRoutes = require("./routes/adminNodeAddRoutes");
 let adminNodeEditRoutes = require("./routes/adminNodeEditRoutes");
+let adminUserIndexRoutes = require("./routes/adminUserIndexRoutes");
 // 设置中间件接收post请求
 app.use(express.urlencoded({ extended: false }));
 // ejs配置
@@ -47,6 +48,8 @@ app.use("/admin", adminIndexRoutes);
 app.use("/admin", adminNodeIndexRoutes);
 app.use("/admin", adminNodeAddRoutes);
 app.use("/admin", adminNodeEditRoutes);
+app.use("/admin", adminUserIndexRoutes);
+// app.use("/admin", adminUserIndexRoutes);
 
 // 404页面
 app.use((req, res, next) => {
