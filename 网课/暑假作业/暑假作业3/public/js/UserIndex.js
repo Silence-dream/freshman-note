@@ -23,28 +23,27 @@ $(function () {
     });
   });
 
-  // // 点击查询机构
-  // $("#btnQuery").click(function (e) {
-  //   e.preventDefault();
-  //   let formData = $("form").serialize();
-  //   $.ajax({
-  //     type: "post",
-  //     url: "/admin/NodeFindData",
-  //     data: formData,
-  //     success: function (response) {
-  //       if (response.code == 200) {
-  //         // location.reload();
-  //         console.log(response);
-  //         let trStr = template("tbodyDataTemplate", response);
-  //         console.log(trStr);
-  //         $("tbody").html(trStr);
-  //       }
-  //       if (response.code == 500) {
-  //         alert("查询失败");
-  //       }
-  //     },
-  //   });
-  // });
+  // 点击模糊查询用户
+  $("#UserQuery").click(function (e) {
+    e.preventDefault();
+    let formData = $("form").serialize();
+    $.ajax({
+      type: "get",
+      url: "/admin/UserQuery",
+      data: formData,
+      success: function (response) {
+        if (response.code == 200) {
+          console.log(response);
+          let trStr = template("tbodyDataTemplate", response);
+          console.log(trStr);
+          $("tbody").html(trStr);
+        }
+        if (response.code == 500) {
+          alert("查询失败");
+        }
+      },
+    });
+  });
 
   // // 点击编辑
   // $("tbody").on("click", ".btnEdit", function (e) {

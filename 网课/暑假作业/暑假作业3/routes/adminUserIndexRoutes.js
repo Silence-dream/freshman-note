@@ -1,6 +1,10 @@
 const express = require("express");
 const adminUserIndexRoutes = express.Router();
-const { findUser, deleteUser } = require("../models/adminUserModels");
+const {
+  findUser,
+  deleteUser,
+  findQuery,
+} = require("../models/adminUserModels");
 // 渲染页面
 adminUserIndexRoutes.get("/UserIndex", (req, res) => {
   findUser(function (result) {
@@ -25,4 +29,16 @@ adminUserIndexRoutes.delete("/UserDelete", (req, res) => {
     }
   });
 });
+// 模糊查询用户;
+adminUserIndexRoutes.get("/UserQuery", (req, res) => {
+  console.log(req.query);
+  let obj = req.query;
+  findQuery(obj, function (result) {
+    return res.send({
+      code: 200,
+      data: result,
+    });
+  });
+});
+
 module.exports = adminUserIndexRoutes;

@@ -36,3 +36,26 @@ module.exports.deleteUser = (id, callback) => {
   });
 };
 //#endregion
+
+// 模糊查询
+/**
+ * 模糊查询 传入正确的对象格式
+ * {
+ *  username:xxx,
+ * gname:xxx,
+ * }
+ *
+ * @param {object} obj
+ * @param {function} callback
+ */
+module.exports.findQuery = (obj, callback) => {
+  pool.query(
+    `select users.id,users.username,users.state,institutions.ins_number,institutions.gname from users,institutions 
+    WHERE  users.gid=institutions.id and users.username= '${obj.username}' or institutions.gname='${obj.gname}';`,
+    function (error, results, fields) {
+      if (error) throw error;
+      callback(results);
+      // console.log(results);
+    }
+  );
+};
