@@ -30,7 +30,7 @@
                 <td><%=item.gname %></td>
                 <td><%=item.state %></td>
                 <td>
-                    <a href="/admin/edit" data-id="<%=item.id %>">编辑</a> &nbsp; &nbsp
+                    <a href="/admin/edit" class="btnEdit" data-id="<%=item.id %>">编辑</a> &nbsp; &nbsp
                     <a href="#" data-id="<%=item.id %>" class="btnDelete">删除</a>
                 </td>
             </tr>
@@ -53,7 +53,7 @@
         <td>{{$value.gname}}</td>
         <td>{{$value.state}}</td>
         <td>
-            <a href="/admin/edit" data-id="{{$value.id}}">编辑</a> &nbsp; &nbsp
+            <a href="/admin/edit" class="btnEdit" data-id="{{$value.id}}" >编辑</a> &nbsp; &nbsp
             <a href="#" data-id="{{$value.id}}" class="btnDelete">删除</a>
         </td>
     </tr>

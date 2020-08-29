@@ -44,4 +44,13 @@ $(function () {
       },
     });
   });
+
+  // 点击编辑
+  $("tbody").on("click", ".btnEdit", function (e) {
+    e.preventDefault();
+    let id = $(this).attr("data-id");
+    console.log(id);
+
+    window.location.href = `/admin/edit?id=${id}`;
+  });
 });
